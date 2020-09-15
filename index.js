@@ -63,7 +63,7 @@ app.use('/sites', sitesRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+  res.locals.error = req.app.get('env') === 'production' ? err : {};
   res.status(err.status || 500);
   res.render('error');
 });
@@ -87,9 +87,15 @@ io.on('connection', function(socket){
     socket.broadcast.emit('reply', data);
   });
 });
-
+/*
 app.listen(config.port, function () {
     console.log(`${pkg.name} listening on port ${config.port}`);
+});*/
+
+// start server
+const port = process.env.NODE_ENV === 'production' ? (process.env.PORT || 80) : 7120;
+app.listen(port, () => {
+  console.log('Server listening on port ' + port);
 });
 
 module.exports = app;
