@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  .container
+    .row.w3-row-padding.w3-padding-16.w3-justify.w3-theme-l1
+      .col-sm-8 
+        h3 Main News
+        #news.w3-row-padding.w3-justify.w3-padding-16
+          .w3-third.w3-margin-bottom
+            ul.w3-ul.w3-border.w3-hover-shadow
+              article.w3-card.w3-container.w3-white
+                h4 #{article_it.family_name}, #{article_it.first_name}
+                p #{article_it.my_artic_title}
+                a.w3-hover-white(href='http://' onclick="document.getElementById('fullStory').style.display='block'" title='read full story') full story>>
+                #fullStory.w3-modal
+                  .w3-modal-content.w3-card-2.w3-animate-top
+                    header.w3-container.w3-teal.w3-display-container
+                      span.w3-button.w3-teal.w3-display-topright(onclick="document.getElementById('fullStory').style.display='none'")
+                        i.fa.fa-remove close
+                      h2  #{article_it.my_artic_title}
+                      h5  #{article_it.name}
+                        | #{article_it.date}
+                        i.fa.fa-smile-o
+                    .w3-container
+                      p #{article_it.article_content}
+                      //-p #{article_it.article_content}
+                    footer.w3-container.w3-teal
+                      p Basilwizi | Copyright-2019 |
+          
+          

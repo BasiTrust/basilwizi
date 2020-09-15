@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1.w3-container= title
+  .w3-row
+    .container.w3-m12
+      .w3-third.w3-margin-bottom
+        ul.w3-ul.w3-border.w3-hover-shadow
+          header.w3-card.w3-container.w3-teal.w3-display-container
+            h3 #[strong Title: ] #{c_title}
+            i #[strong Details: ] #{first_name} ( #{user_email} ) #{date-pub}
+          .w3-container.w3-white
+            p #{commentary_content}

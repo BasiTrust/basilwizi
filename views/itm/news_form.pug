@@ -1,0 +1,56 @@
+extends ../layout
+block content
+  #home.inner-news-page
+    .overlay-innerpage
+      .top_w3pvt_main.container
+    .row.top_w3pvt_main.container
+      ol.breadcrumb.d-flex
+        li.breadcrumb-item
+          a(href="/") Home
+        li.breadcrumb-item.active Writing article
+  section.banner_bottom.py-5
+    .container.p-md-5 
+      .row
+        .col-lg-12
+          h4.my-3
+          form(action="/sites/news", method="post", enctype="multipart/form-data")
+            .form-group
+              .row
+                .col-md-6
+                  label First Name
+                  input.form-control(type="text", name="author_fname", required)
+                .col-md-6
+                  label Last Name
+                  input.form-control(type="text", name="author_lname", required)
+            .form-group
+              .row
+                .col-md-6
+                  label Email
+                  input.form-control(type="email", name="author_email", required)
+                .col-md-6
+                  label Phone Number
+                  input.form-control(type="number", name="author_phone")
+            .form-group
+              .row
+                .col-md-12
+                  label Article title
+                  input.form-control(type="text", name="news_title" required)
+            .form-group
+              .row
+                .col-md-12
+                  label Article Content - Please edit your work before submitting it for publishing
+                  #editor(name="news_message" required)
+                  script.
+                    ClassicEditor
+                      .create( document.querySelector( '#editor' ), {
+                        toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote' ],
+                      } )
+                      .then( editor => {
+                        window.editor = editor;
+                      } )
+                      .catch( error => {
+                        console.error( error );
+                      } );
+              .row
+                .col-md-4 
+                  button.btn.btn-alert(type="submit") Create Article

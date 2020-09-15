@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1 #{title}: #{c_title}
+  
+  p Do you really want to delete this Comment?
+    
+  form(method='POST' action='')
+    div.form-group
+      input#commentid.form-control(type='hidden',name='commentaryid', required='true', value=commentary._id )
+
+    button.btn.btn-primary(type='submit') Delete

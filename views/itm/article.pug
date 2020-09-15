@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  .w3-container.w3-padding-16.w3-theme-l5
+    .w3-row
+      .w3-col.m12
+        form.w3-container.w3-card-4.w3-padding-16.w3-white(action="", method="post")
+          .w3-row
+            .w3-col.m3
+              .w3-section
+                label Name
+                input.form-control(type="text", placeholder="First name", name="first_name", required)
+            .w3-col.m3
+              .w3-section
+                label Surname
+                input.form-control(type="text", placeholder="Surname", name="family_name", required)
+            .w3-col.m3
+              .w3-section
+                label Email
+                input.form-control(type="email", placeholder="provide email address", name="user_email", required)
+            .w3-col.m3
+              .w3-section
+                label Date of Publishing
+                input.form-control(type="date", name="date_of_pub", required)
+          .w3-row
+            .w3-section
+              label Article title
+              input.form-control(type="text", placeholder="Title. Please give a nice title", name="article_title", required)
+            .w3-section.w3-container.w3-card-4.w3-padding-16.w3-white
+              label Article Body
+              textarea.textarea.form-control(type="text", placeholder="Type here...", rows="12" name="title_content", required)
+            .w3-section
+              button.btn.btn-success(type="submit") Publish Article

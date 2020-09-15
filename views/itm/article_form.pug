@@ -1,0 +1,47 @@
+extends layout
+
+block content
+  #home.inner-w3pvt-page
+    .overlay-innerpage
+      .top_w3pvt_main.container
+    .row.top_w3pvt_main.container
+      ol.breadcrumb.d-flex
+        li.breadcrumb-item
+          a(href="/") Home
+        li.breadcrumb-item.active News
+        h3.tittle-w3ls.news-font Twaabane Times
+  .w3-container.w3-padding-16.w3-theme-l5
+    .w3-row
+      .w3-col.m12
+        form.w3-container.w3-card-4.w3-padding-16.w3-white(action="", method="post")
+          .w3-row
+            .w3-col.m3
+              .w3-section
+                label Name
+                input.form-control(type="text", placeholder="First name", name="first_name", required value=(formData===undefined ? '' : formData.first_name))
+            .w3-col.m3
+              .w3-section
+                label Surname
+                input.form-control(type="text", placeholder="Surname", name="family_name", required value=(formData===undefined ? '' : formData.family_name))
+            .w3-col.m3
+              .w3-section
+                label Email
+                input.form-control(type="email", placeholder="provide email address", name="user_email", required value=(formData===undefined ? '' : formData.user_email))
+            .w3-col.m3
+              .w3-section
+                label Date of Publishing
+                input.form-control(type="date", name="date_of_pub", required value=(formData===undefined ? '' : formData.date_of_pub))
+          .w3-row
+            .w3-section
+              label Article title
+              input.form-control(type="text", placeholder="Title. Please give a nice title", name="my_artic_title", required value=(formData===undefined ? '' : formData.my_artic_title))
+            .w3-section.w3-container.w3-card-4.w3-padding-16.w3-white
+              label Article Body
+              textarea.textarea.form-control(type="text", placeholder="Type here...", rows="12" name="article_content", required value=(formData===undefined ? '' : formData.article_content))
+            .w3-section
+              button.btn.btn-success(type="submit") Publish Article
+
+  //if errors 
+    ul
+      for error in errors
+        li!= error.msg

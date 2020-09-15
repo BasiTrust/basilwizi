@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  #home.inner-w3pvt-page
+    .overlay-innerpage
+      .top_w3pvt_main.container
+  secton.about.py-5
+    .container.p-md-5
+      .about-hny-info.text-left.px-md-5
+        .error-w3pvt.px-md-5.text-center
+          h3 4
+            |
+            span.fa.fa-frown-o 
+            | 4
+          h4 Page Not Found
+          a.btn.more.black.error.mt-4(href="/") Back to Home
+    .jumbotron
+      h3.display-4 Error trace
+        p.lead
+        hr
+      pre #{error.stack}
+

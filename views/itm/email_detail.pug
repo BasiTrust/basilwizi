@@ -1,0 +1,13 @@
+extends layout
+
+block content
+
+  h1 Email: #{url}
+  
+  div(style='margin-left:20px;margin-top:20px')
+
+  h4 #[strong Date modified:] !{Date()}
+  if user
+    hr
+    p
+      a(href=email+'/delete') Delete Email 

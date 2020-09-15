@@ -1,0 +1,10 @@
+extends layout
+block content
+  h1 #{title} 
+  != messages('message', locals)
+  if errors
+    each error, i in errors
+      div(class="alert alert-danger") #{error.msg}
+  h2 User Display Name: #{user.displayName}
+  h2 User Username: #{user.first_name}
+  h2 User Email: #{user.user_email}

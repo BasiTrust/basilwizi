@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+  
+  ul
+    each email in email_list
+      li 
+        a(href=email.url) #{email.email} 
+
+    else
+      li There are no subscribbers

@@ -1,0 +1,84 @@
+extends ../layout
+
+block content
+  //-  Create new account
+  #home.inner-manage-page
+    .overlay-innerpage
+      .top_w3pvt_main.container
+    .row.top_w3pvt_main.container
+      ol.breadcrumb.d-flex
+        li.breadcrumb-item
+          a(href="/") Home
+        li.breadcrumb-item.active Signup now
+  section.about.py-5#how
+    .container.py-md-5
+      .row.about-grids
+        //- LEFT COLUMN
+        .col-lg-6.about-left
+          img.img-fluid(src='/images/about.jpg' alt)
+        //- RIGHT COLUMN
+        .col-lg-6.grid1.mt-lg-0.mt-4.pl-lg-5
+          h4.my-3 Create an account today!
+          form(action="", method="post", enctype="multipart/form-data")
+            .form-group
+              .row
+                .col-md-6
+                  label First Name
+                  input.form-control(type="text", name="user_fname", required)
+                .col-md-6
+                  label Last Name
+                  input.form-control(type="text", name="user_lname", required)
+            .form-group
+              .row
+                .col.md-3
+                  label Gender
+                  select.ui.compact.selection.dropdown.form-control(name='gender', required )
+                    opton.active(value=" ") Select
+                    option(value='m') Male
+                    option(value='f') Female
+                    option(value='x') Secret 
+                .col.md-9
+                  label Phone Number
+                  input.form-control(type="text", name="user_phonenumber")
+            .form-group
+              .row
+                .col.md-6
+                  label Home Address
+                  input.form-control(type="text", name="user_address", required)
+            .form-group
+              .row
+                .col.md-6
+                  label 
+                    |
+                    span.fa.fa-envelope-open   Email
+                  input.form-control(type="email", name="user_email", required)
+                .col.md-6
+                  label
+                    |
+                    .fa.fa-user   Username
+                  input.form-control(type="text", name="u_sername", required)
+            .form-group
+              .row
+                .col-md-6
+                  label 
+                    |
+                    .fa.fa-key    Password
+                  input.form-control(type="password", name="user_passwd", required)
+                .col-md-6
+                  label
+                    |
+                    .fa.fa-key   Confirm Password
+                  input.form-control(type="password", name="repassword", required)
+            .form-group
+              .row
+                .col-md-3
+                  label Profile picture
+                  input.form-control(type="file", name="user_avatar")
+                .col-md-9
+                  label Bio
+                  textarea.form-control(name="user_bio" row=2)
+            .form-group
+              .row
+                .col-md-6
+                  button.btn.btn-info(type="submit") Register
+    

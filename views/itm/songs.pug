@@ -1,0 +1,43 @@
+extends ../layout
+
+block content
+  //- About Basilwizi
+  #home.inner-w3pvt-page
+    .overlay-innerpage
+      .top_w3pvt_main.container
+    .row.top_w3pvt_main.container
+      ol.breadcrumb.d-flex
+        li.breadcrumb-item
+          a(href="/") Home
+        li.breadcrumb-item.active Music
+  section#services.services
+    .over-lay-blue.py-5
+      .container.py-md-5
+        .row.my-4
+          .col-lg-5.services-innfo.pr-5
+            h3.tittle-w3ls.two.mb-3.text-left
+              span.pink Music 
+              | makes who we are
+            p the river water is so good no one dares leave it after testing it. thatd why many drink, but a few will survive the river flow.
+            
+            audio(id='audioPlayer', controls)
+              | Sorry your browser is not supported!
+            //if (files > 0)
+              ul#playlist
+                li
+                  a(href="#") file.filename
+              else 
+              p Empty. Upload something!
+            form(action="/sites/itm/songs/upload" method="post" enctype="multipart/form-data")
+              .row
+                .col-sm-9
+                  .form-group
+                    input.form-control(type="file" name="song" attributes='name="buffer"' required)
+                .col-sm-3
+                  button.btn.btn-primary(type="submit") Upload
+
+          .col-lg-7.services-innfo.pr-5
+            h3.tittle-w3ls.two.mb-3.text-center
+              span.pink Youtube channel
+            iframe(src="https://www.youtube.com/embed/ratdbWKBfks?autoplay=0" allowfullscreen="")
+  include gallery

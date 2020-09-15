@@ -1,0 +1,84 @@
+extends ../layout
+block content
+  #home.inner-news-page
+    .overlay-innerpage
+      .top_w3pvt_main.container
+    .row.top_w3pvt_main.container
+      ol.breadcrumb.d-flex
+        li.breadcrumb-item
+          a(href="/") Home
+        li.breadcrumb-item.active News
+  section.banner_bottom.py-5
+    .container.p-md-5 
+      .row 
+        h3.tittle-w3ls Twaabane Times
+        p The newsletter name is derived from a Tonga word "Twaabane" which means "sharing". This newsletter is called as such because its intention is to improve information dissemination, sharing and access in the Zambezi valley. It is prepared and published by Tonga.Online ICT and Cultural Promotion Project. The project operates under Basilwizi Trust. 
+        p It covers salient events that happen in the Zambezi valley. These stories are expressed in the form of poems, news stories and word puzzles. These stories, poems and word puzzles are written by well trained media club members from 10 Information Technology centres (ITCs) around the Zambezi valley.
+        a.btn.more.green(href="/sites/article/create" role="button") Write Article
+        //-* So all additions whould come here*/
+        //-*The article loops should appear here*/
+        each article, i in articles_list
+          .row.banner_bottom.py-5
+            h4  #{article.my_artic_title}
+            h6  #{article.family_name}, #{article.first_name} : #{article.date}
+            p !{article.article_content} 
+              a.btn.more.blue(href=article.url+'/update' role="button") Update Article
+            .row.banner_bottom.py-5
+              //each comment in art_comm_list
+              //- Leave a comment code
+              .comments.my-5.px-lg-5
+                h4.title-hny.mb-5 Recent comments
+                .comments-grids.mt-4
+                  .media.mt-4
+                    span.fa.fa-user-circle(aria-hidden="true")
+                    .media-body.comments-grid-right
+                      //h4 #{comment.comm_name}
+                      ul.my-2
+                        li.font-weight-bold 4 April 2020
+                          i  | 
+                        li
+                          a(href="#").font-weight-bold  Reply
+                      //p #{comment.comm_content}
+            .container.p-md-5
+              .contact-right-hny-info.login.px-lg-5
+                h4.title-hny.mb-5 Leave a comment
+                form.contact-hny-form(action="/sites/commentary/create" method="post")
+                  .row
+                    .col-lg-6
+                      .form-group
+                        label First Name (Zina Lyako)
+                        input.form-control(type="text" name="comm_name" placeholder="Izina" required="")
+                      .form-group
+                        label Email
+                        input.form-control(type="email" name="comm_email" placeholder="someone@example.com" required="")
+                    .col-lg-6
+                      .form-group
+                        label Comment
+                        textarea.form-control(type="text" name="comm_content" required="")
+                    .form-group.mx-auto.mt-3
+                      button.btn.more(type="submit") Submit
+        
+        
+        //-* It there is nothng in the lst of artcles*/
+          else
+            b No stories in the news room
+      //* Leave the feature alone
+      #features.row.features-w3pvt-main
+        .col-md-4.feature-gird
+          .row.features-hny-inner-gd
+            .col-md-3.featured_grid_left
+              .icon_left_grid
+                span.fa.fa-globe(aria-hidden="true")
+            .col-md-9.featured_grid_right_info.pl-lg-0
+              h4
+                a.link-hny(href="#") Network with others
+              p Stay tuned as we will walk with you all the way. Local music is found here. Subscribe to our emailing list so that you can receive current news and other updates 
+
+            
+              //-  a.w3-display-bottom(href=article.url+'/update') Edit
+                  
+      //-else
+        p There are no articles 
+        p
+          a(href=articles.url+'/update') Update Article
+        .row

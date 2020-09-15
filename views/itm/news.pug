@@ -1,0 +1,158 @@
+extends ../layout
+mixin reply(replyData)
+  .reply
+    if replyData.reply_postedby
+      em Posted by Admin
+    date_reply= replyData.date_reply
+    comment_reply= replyData.comment_reply
+block content
+    #home.inner-news-page
+      .overlay-innerpage
+        .top_w3pvt_main.container
+      .row.top_w3pvt_main.container
+        ol.breadcrumb.d-flex
+          li.breadcrumb-item
+            a(href="/") Home
+          li.breadcrumb-item.active News
+    //-section.banner_bottom.py-5
+      .container.p-md-5 
+        .row 
+          h3.tittle-w3ls Twaabane Times 
+          p The newsletter name is derived from a Tonga word "Twaabane" which means "sharing". This newsletter is called as such because its intention is to improve information dissemination, sharing and access in the Zambezi valley. It is prepared and published by Tonga.Online ICT and Cultural Promotion Project. The project operates under Basilwizi Trust. 
+          p It covers salient events that happen in the Zambezi valley. These stories are expressed in the form of poems, news stories and word puzzles. These stories, poems and word puzzles are written by well trained media club members from 10 Information Technology centres (ITCs) around the Zambezi valley.
+          if user.isAdmin
+            a.btn.more.green(href="/sites/itm/news_form" role="button") Write Article
+    section.banner_bottom.py-5
+      .container.p-md-5 
+        .row 
+          //-* So all additions whould come here*/
+          //-*The article loops should appear here*/
+          .pagination.pagination-sm
+          for article, i in articles
+            .row
+              if (pages)
+                ul.pagination.pagination-lg.text-center
+                  if (current_page == 1)
+                    li.disabled
+                      a First
+                  else
+                    li
+                      a(href="/sites/itm/news/1") First
+                  - let p = [(Number(current_page) > 5 ? Number(current_page) - 4 : 1)];
+                  each pg, i in [(Number(current_page) + 4)]
+                    if (pg[i] == current_page)
+                      li.disabled
+                        a= pg[i]
+                    else
+                      li.active
+                        a(href=`/sites/itm/news/${p[i]}`)= p[i].page
+                  if (current_page == pages)
+                    li.disabled
+                      a Last
+                  else
+                    li
+                      a(href=`/sites/itm/news/${pages}`) Last
+            .row.banner_bottom.py-5
+                h4= article.news_title
+                h6= ' by : ' + article.author_fname + ' ' + article.author_lname + ' [ ' + article.news_pub_date + ' ]'
+                p= article.news_message
+                //if user
+                  a.btn.more.blue(href=article.url+'/update' role="button") Update Article
+                  if user.Role === "Writer"
+                  a.btn.more.green(href="/sites/itm/news_form" role="button") Write Article
+            .row.banner_bottom.py-5
+              .comments.my-5.px-lg-5
+                h4.title-hny.mb-5 Recent Comment
+                for comment, i in article.comments
+                  if (article._id == comment.postId)
+                    .comments-grids.mt-4
+                      .media.mt-4
+                        span.fa.fa-user-circle(aria-hidden="true")
+                        .media-body.comments-grid-right
+                          h4= comment.comment_name
+                          ul.my-2
+                            li.font-weight-bold= comment.date_posted
+                              i |
+                            li
+                              a.font-weight-bold(href="#replynow") Reply
+                          p= comment.comment_message
+                      .media.mt-sm-5.mt-3.ml-5
+                        .reply
+                          for re, i in replies
+                            if (comment._id == re.commentId)
+                              - let c = { reply_postedby: true }
+                              a.pr-3
+                                span.fa.fa-user-circle(aria-hidden="true")
+                              .media-body.comments-grid-right
+                                h4
+                                  +reply(c)
+                                ul.my-2
+                                  li.font-weight.bold= re.date_reply
+                                    i |
+                                  li
+                                    a.font-weight-bold(href="#replynow") Reply
+                                p= re.comment_reply
+                        .container
+                          form#replynow(action="/sites/itm/news/reply" method="post" enctype="multipart/form-data")
+                            input#commentId(type="hidden" name="commentId", value=`${comment._id}`)
+                            input(type="hidden", name="posted_by", value="Posted by Admin")
+                            textarea.form-control(name="comment_reply", rows=2)
+                            button.btn.more(type="submit") Post
+            .container.p-md-5
+              .contact-right-hny-info.login.px-lg-5
+                h4.title-hny.mb-5 Leave a comment
+                form.contact-hny-form(action="/sites/itm/news/comment" method="post" enctype="multipart/form-data")
+                    .row
+                      .col-sm-6
+                        .form-group
+                          label First Name (Zina Lyako)
+                          input.form-control(type="text" name="comment_name" placeholder="Izina" required="")
+                          input#postId(type="hidden" name="postId" value=`${article._id}`)
+                      .col-sm-4
+                        .form-group
+                          label Email ( Optional )
+                          input.form-control(type="email" name="comment_email" placeholder="someone@example.com")
+                    .row
+                      .col-md-10
+                        .form-group
+                          textarea.form-control(type="text" name="comment_message" required="")
+                    .form-group.mx-auto.mt-3
+                      button.btn.more(type="submit") Submit
+          else
+            p Empty Pages
+            p= role
+        #features.row.features-w3pvt-main
+          .col-md-4.feature-gird
+            .row.features-hny-inner-gd
+              .col-md-3.featured_grid_left
+                .icon_left_grid
+                  span.fa.fa-globe(aria-hidden="true")
+              .col-md-9.featured_grid_right_info.pl-lg-0
+                h4
+                  a.link-hny(href="#") Network with others
+                p Stay tuned as we will walk with you all the way. Local music is found here. Subscribe to our emailing list so that you can receive current news and other updates
+          .col-md-4.feature-gird
+            .row.features-hny-inner-gd
+              a.btn.more.green(href="/sites/itm/news_form" role="button") Write Article
+              //a.btn.more.blue(href=i.url+'/update' role="button") Update Article
+              if guest
+                a.btn.more.green(href="/sites/itm/news_form" role="button") Write Article
+    //script.
+      var socket = io();
+      $('#send').click(function(){
+        var comment = $('#comment').val();
+        var postId = $('#postId').val();
+        if(comment != ''){
+          var data = {'comment': comment,'postId': postId};
+          $('.comments').append("<p>"+comment+"</p>");
+          $('#comment').val('');
+        }
+        socket.emit('comment',data);
+      });
+      socket.on('comment',function(data){
+          var postId = "<%= postId %>";
+          if(postId==data.postId){
+              $('.comments').append("<p>"+data.comment+"</p>");
+          }
+          }); 
+    

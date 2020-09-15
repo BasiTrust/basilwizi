@@ -1,0 +1,103 @@
+extends ../layout
+
+block content
+  #home.inner-w3pvt-page
+    .overlay-innerpage
+      .top_w3pvt_main.container
+    .row.top_w3pvt_main.container
+      ol.breadcrumb.d-flex
+        li.breadcrumb-item
+          a(href="/") Home
+        li.breadcrumb-item.active Blogging zone
+  section.about-info.p-lg-5.p-3
+    .content-w3ls-inn.px-lg-5
+      .container.py-md-5.py-3
+        .content-sing-w3pvt.px-lg-5 
+          img.img-fluid.mb-2(src="/images/banner2.jpg" alt=" ")
+          h4.title-hny.my-2 Tonga culture in the spotlight
+          p The people need life, they need service. who can afford to come down to them and giive them what they want/ are you willing to work wih anfd for them. come lets begin the work.
+          p.mt-2 There is time for hoe, time for service delivery and time fr rebuilfing that which looks like a community of love, respect, and social cohession.
+
+          .row.about-w3pvt-top.mt-2
+            .col-lg-6.about-info
+              h4.title-hny.mb-3 Topics which made headlines
+              p We have selected a few issues to talk about. what is your take on these. Lests begin.
+            
+            .col-lg-6.about-img
+              .row
+                .col
+                  img.img-fluid(src="/images/g3.jpg" alt="user-image")
+                .col
+                  img.img-fluid(src="/images/g2.jpg" alt="image")
+          .social-icons-footer
+            ul.list-unstyled.w3pvt-icons.mb-5
+              li.lead Catch on Social :
+              li
+                a(href="#")
+                  span.fa.fa-facebook-f
+              li
+                a(href="#")
+                  span.fa.fa-twitter
+              li
+                a(href="#")
+                  span.fa.fa-google-plus
+        .comments.my-5.px-lg-5
+          h4.title-hny.mb-5 Recent Posts
+          each blog in blogposts
+            .comments-grids.mt-4
+              .media.mt-sm-5.mt-3.ml-5
+                span.fa.fa-user-circle(aria-hidden="true")
+                .media-body.comments-grid-right
+                  h5= blog.bloger_name
+                  ul.my-2
+                    li.font-weight-bold= blog.blog_date
+                      i  | 
+                    li
+                      a.font-weight-bold(href="#blog-form")  Reply
+                  b
+                    p= blog.blog_title
+                  p= blog.blog_message
+              //-.media.mt-sm-5.mt-3.ml-5
+                a.pr-3(href="#")
+                  img.img-fluid.media-img(src="/images/t2.jpg" alt="image")
+                .media-body.comments-grid-right
+                  h4 Mwaami Wesu
+                  ul.my-2
+                    li.font-weight-bold 4 April 2020
+                      i |
+                    li.font-weight-bold
+                      a(href="#") Reply
+                  p There is going to be many topics to enjoy from this discussion, I can see that.
+          else
+            p Be the first to post
+        .contact-right-hny-info.login.px-lg-5
+          h4.title-hny.mb-5 Leave a comment
+          form#blog-form.contact-hny-form(action="/sites/blogpost/create" method="post", enctype="multipart/form-data")
+            .row
+              .col-lg-5
+                .form-group
+                  label First Name (Zina Lyako)
+                  input.form-control(type="text" name="bloger_name" placeholder="Izina" required="")
+              .col-md-5
+                .form-group
+                  label Email
+                  input.form-control(type="email" name="bloger_email" placeholder="someone@example.com" required="")
+            .row
+              .col-lg-10
+                .form-group
+                  label Title of your discussion
+                  input.form-control(type="text" name="blog_title" placeholder="Title" required="")
+            .row
+              .col-md-10
+                .form-group
+                  textarea.form-control(type="text" name="blog_message" required="")
+            .row
+              .form-group.mx-auto.mt-3
+                button.btn.more(type="submit") Submit
+  script.
+    $(document).ready(function(){
+      var d1 = moment(blog.date-posted);
+      var d2 = moment(Date.now());
+      var posted = d1.from(d2);
+    })
+    

@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1 #{title}: #{email}
+  
+  p Do you really want to delete this Email?
+    
+  form(method='POST' action='')
+    div.form-group
+      input#emailid.form-control(type='hidden',name='emailid', required='true', value=email._id )
+
+    button.btn.btn-primary(type='submit') Delete

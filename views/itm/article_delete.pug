@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1 #{title}: #{article_title}
+  
+  p Do you really want to delete this story?
+    
+  form(method='POST' action='/sites/article/delete')
+    div.form-group
+      input#articleid.form-control(type='hidden',name='articleid', required='true', value=article._id )
+
+    button.btn.btn-primary(type='submit') Delete

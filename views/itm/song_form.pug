@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  .w3-container.w3-padding-64.w3-justify
+    h1 #{title}
+
+    form(method='POST' action='/sites/song/create')
+      .input-group
+        .form-group
+          label(for='song_title') File
+          input.form-control(type="file", name="name", attributes='name="buffer"')
+      .input-group
+        button.btn.btn-primary(type='submit') Upload..
+    
+    //if errors
+      ul
+        for error in errors
+          li!= error.msg

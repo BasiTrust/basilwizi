@@ -1,0 +1,46 @@
+extends ../layout
+block content
+  #home.inner-manage-page
+    .overlay-innerpage
+      .top_w3pvt_main.container
+    .row.top_w3pvt_main.container
+      ol.breadcrumb.d-flex
+        li.breadcrumb-item
+          a(href="/") Home
+        li.breadcrumb-item.active News
+  section.about-info.py-5.px-lg-5
+    .content-w3ls-inn.px-lg-5
+      .container.py-md-5.py-3
+        .px-lg-5
+          h3.tittle-w3ls.mb-lg-5.mb-4 Contact
+            span.pink  Us
+          p.mt-5.pr-lg-5 As a community based organisation, we bellieve in sharing ideas, and working together. we are open to more ddeas that can make the Basilwizi people live a better life than being experienced now. Give us a shout, or drop your message right below.
+          .contact-hny-form.mt-lg-5.mt-3
+            h3.title-hny.mb-lg-5.mb-3 Drop a line
+            form(action="" method="post", enctype="multipart/form-data")
+              .row
+                .col-lg-6
+                  .form-group
+                    label(for="") Your Name
+                    input.form-control(type="text" name="contact_name" required)
+                  .form-group
+                    label(for="") Email
+                    input.form-control(type="email" name="contact_email" required)
+                .col-lg-6
+                  .form-group
+                    label(for="") Message
+                    textarea.form-control(name="contact_message" required)
+                .form-group.mx-auto.mt-3
+                  button.btn.btn-default.morebtn.more.black.con-submit(type="submit") Send
+          .map-w3pvt.mt-5
+            iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423286.27404345275!2d-118.69191921441556!3d34.02016130939095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos+Angeles%2C+CA%2C+USA!5e0!3m2!1sen!2sin!4v1522474296007" allowfullscreen="")
+  
+  //-.container
+    h1 !{title}
+    .w3-row
+      each contactus, i in contactus_list
+        .w3-third.w3-margin-bottom
+          ul.w3-ul.w3-border.w3-hover-shadow
+            article.w3-card.w3-container.w3-white
+      else
+        p There are no messages

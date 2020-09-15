@@ -1,0 +1,40 @@
+extends ../layout
+block content
+  //-  Login page
+  #home.inner-manage-page
+    .overlay-innerpage
+      .top_w3pvt_main.container
+    .row.top_w3pvt_main.container
+      ol.breadcrumb.d-flex
+        li.breadcrumb-item
+          a(href="/") Home
+        li.breadcrumb-item.active Login
+  section.about.py-5#how
+    .container.py-md-5
+      .row.about-grids
+        //- LEFT COLUMN
+        .col-lg-6.about-left
+          img.img-fluid(src='/images/about.jpg' alt)
+        //- RIGHT COLUMN
+        .col-lg-6.grid1.mt-lg-0.mt-4.pl-lg-5
+          h4.my-3 Lets get started.
+          form(action="/sites/login", method="post", enctype="multipart/form-data")
+            .form-group
+              label
+                |
+                .fa.fa-user  Username
+              input.form-control(type="text", name="u_sername", required)
+            .form-group
+              label
+                |
+                .fa.fa-user-secret  Password
+              input.form-control(type="password", name="user_passwd", required)
+            .form-group
+              button.btn.btn-danger.about-right(type="submit")
+                |
+                .fa.fa-sign-in  Login
+          h4  Or
+          p Create an Instant Account
+            | 
+            a(href="/sites/logging/signup") Here
+  

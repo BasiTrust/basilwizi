@@ -1,0 +1,31 @@
+#alert-msg
+  if success
+    .success.message(style='position: absolute; top: 100px; right: 730px;min-width: 40px;text-align:center;')
+      h1.pink
+        i.fa.fa-check
+        | !{success}
+  if error
+    .error.message(style='position: absolute; top: 100px; right: 630px;min-width: 40px;text-align:center;')
+      p 
+        span 
+          i.fa.fa-thumbs-o-down 
+        //-span  #{error}
+script.
+  /*FADING POPUP MENU*/
+  $(document).ready(function () {
+    if ($('.success.message').length > 0) {
+      setTimeout(function() {
+        $('.success.message').fadeOut(300)
+      }, 300)
+    } else if ($('.error.message').length > 0) {
+      setTimeout(function() {
+        $('.error.message').fadeOut(300)
+      }, 300)
+    }
+    $('.dropdown').dropdown();
+    $('.post-content .avatar-link').popup({
+      inline: true,
+      position: 'bottom right',
+      lastResort: 'bottom right'
+    });
+  });

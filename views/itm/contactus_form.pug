@@ -1,0 +1,76 @@
+extends layout
+
+block content
+  #home.inner-w3pvt-page
+    .overlay-innerpage
+      .top_w3pvt_main.container
+        .inner-w3pvt-page-info
+          ol.breadcrumb.d-flex
+            li.breadcrumb-item
+              a(href="/sites/") Home
+            li.breadcrumb-item.active Contact
+  section.about-info.py-5.px-lg-5
+    .content-w3ls-inn.px-lg-5
+      .container.py-md-5.py-3
+        .px-lg-5
+          h3.tittle-w3ls.mb-lg-5.mb-4 Contact
+            span.pink Us
+          p.mt-5.pr-lg-5 As a community based organisation, we bellieve in sharing ideas, and working together. we are open to more ddeas that can make the Basilwizi people live a better life than being experienced now. Give us a shout, or drop your message right below.
+          .contact-hny-form.mt-lg-5.mt-3
+            h3.title-hny.mb-lg-5.mb-3 Drop a line
+            form(action="" method="post")
+              .row
+                .col-lg-6
+                  .form-group
+                    label(for="w3lName") Your Name
+                    input#w3lName(type="text" name="w3lName")
+                  .form-group
+                    label(for="w3lSender") Email
+                    input#w3lSender(type="email" name="w3lSender")
+                  .form-group
+                    label(for="w3lSubject") Subject
+                    input#w3lSubject(type="text" name="w3lSubject")
+                .col-lg-6
+                  .form-group
+                    label(for="w3lMessage")
+                    textarea#w3lMessage(name="w3lMessage")
+                .form-group.mx-auto.mt-3
+                  button.btn.btn-default.morebtn.more.black.con-submit(type="submit") Send
+          .map-w3pvt.mt-5
+            iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423286.27404345275!2d-118.69191921441556!3d34.02016130939095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos+Angeles%2C+CA%2C+USA!5e0!3m2!1sen!2sin!4v1522474296007" allowfullscreen="")
+
+
+
+  //-.container
+    #contact.w3-container.w3-padding-64.w3-theme-l5
+      .w3-row
+        .w3-col.m5
+          .w3-padding-16 
+            span.w3-xlarge.w3-border-teal.w3-bottombar Contact Us
+          h3 Basilwizi Trust
+          p 11 Pembury Rd, Paddonhurst
+          p
+            i.fa.fa-map-marker.w3-text-teal.w3-xlarge
+            | &nbsp;&nbsp;Bulawayo, Zimbabwe
+          p
+            i.fa.fa-phone.w3-text-teal.w3-xlarge
+            | &nbsp;&nbsp;+263 (1515151515)
+          p
+            i.fa.fa-envelope-o.w3-text-teal.w3-xlarge
+            |
+            a(href="http://", mailto='', target="")
+              | &nbsp;&nbsp;basilwizi@basilwizi.org
+        .w3-col.m7
+          form.w3-container.w3-card-4.w3-padding-16.w3-white(action='')
+            .w3-section
+              label Name
+              input.w3-input(type='text' name='Name' required='')
+            .w3-section
+              label Email
+              input.w3-input(type='email' name='Email' required='')
+            .w3-section
+              label Message
+              textarea.w3-input(type='text' name='Message' required='')
+            input.w3-check(type='checkbox' checked='' name='Like')
+            label I Like it!
+            button.w3-button.w3-right.w3-theme(type='submit') Send

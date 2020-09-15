@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  .w3-container
+    .row.w3-container-white
+      .col-sm-3
+        h3 Annual Reports
+        ul(id="pdfList")
+          li
+            a(href='/media/pdfs/The_Happy_Path.pdf', class="current-pdf") Happy Path
+          li
+            a(href="/media/pdfs/Mapenzi_Mudimba.pdf") CV Mape
+
+      .col-sm-9
+        iframe(href="http://" style="width:100%; height:420px", id="pdfViewer", controls)
+          | This browser does not support PDFs. Please download PDF viewer to view this document
+          |
+          a(href="http://", id="",srcset="current-pdf", name="download" download="") Download
+          //a(href="http://")
+          

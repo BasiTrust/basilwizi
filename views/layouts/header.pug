@@ -1,0 +1,25 @@
+//- This is the header for all the pages. Make sure its called in all .pug files for them to work.
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    link(rel='icon', href='../../../../favicon.ico')
+    title People of the Great River
+    //-link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/style.css', type='text/css', media='all')
+    link(rel="stylesheet", href="/stylesheets/font-awesome.min.css" integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous')
+    link(rel="stylesheet", href="/stylesheets/font-awesome.css")
+  body
+    #home
+      .top_w3pvt_main.container
+        header.nav_w3pvt.text-center
+          include navigation-setting
+      include body-setting
+      include notification
+      block content
+    section
+      include footer
