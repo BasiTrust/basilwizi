@@ -2,12 +2,13 @@
   "name": "basilwizi",
   "version": "1.0.1",
   "private": true,
+  "main": "index.js",
   "engines": {
     "node": "12.18.3",
     "npm": "6.14.6"
   },
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "nodemon index.js"
   },
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^18.0.0",
