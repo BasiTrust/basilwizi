@@ -21,9 +21,3 @@ exports.rep_orts =[
     res.render('extensions/reports');
   }
 ];
-
-exports.bir_d = [
-  (req, res) => {
-    res.render('play/flappy-bird', {title: 'Basilwizi- people of the great river'});
-  }
-];
