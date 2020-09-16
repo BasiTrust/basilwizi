@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^18.0.0",
+    "@fortawesome/fontawesome-free": "^5.14.0",
     "@popperjs/core": "^2.4.4",
     "async": "^3.0.1",
     "bcryptjs": "^2.4.3",
