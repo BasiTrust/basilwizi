@@ -26,14 +26,14 @@ basilwizi.use(session({
   cookie: {
       maxAge: config.session.maxAge
   },
-  url: dbUrl
+  url: config.session.url
 }));
 /** Session will expire after 40 minutes of inactivity */
 basilwizi.use(easySession.main(session, {rbac: data.roles, ipCheck: true, uaCheck: true, maxFreshTimeout: 2400000 }));
 
 basilwizi.use(flash());
 
-basilwizi.use(logger('dev'));
+basilwizi.use(logger('prod'));
 basilwizi.use(express.json());
 basilwizi.use(express.urlencoded({ extended: false }));
 basilwizi.use(cookieParser());
@@ -59,7 +59,7 @@ basilwizi.use('/sites', sitesRouter);
 // catch 404 and forward to error handler
 basilwizi.use(function(req, res, next) {
   res.locals.message = err.message;
-  res.locals.error = req.basilwizi.get('env') === 'development' ? err : {};
+  res.locals.error = req.basilwizi.get('env') === 'production' ? err : {};
   res.status(err.status || 500);
   res.render('error');
 });
