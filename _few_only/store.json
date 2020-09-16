@@ -1,7 +1,5 @@
 {
   "secret": "Basilwizi, people of the great river, doing what is good for the people of Binga.",
   "key": "The River Zambezi",
-  "dbUrl": "mongodb://localhost:27017/secureDb",
-  "musicDB": "mongodb://localhost:27017/tongamusic",
-  "galleryDB": "mongodb://localhost:27017/picturegallery"
+  "dbUrl": "mongodb+srv://basilwizi_01:basilwizi@basilwizi0.x9qlt.mongodb.net/Basilwizi0?retryWrites=true&w=majority"
 }
