@@ -15,7 +15,7 @@ const subs = require('../controllers/subsController');
 const comment_p = require('../controllers/Comments');
 const checkIs = require('../middleware/valid');
 const rep = require('../controllers/ReplyCont');
-const gallery = require('../gallery/gallery');
+//const gallery = require('../gallery/gallery');
 
 // Register user get route 
 router.get('/logging/signup', user_controller.signup_get);
@@ -68,9 +68,9 @@ router.get('/extensions/management', miscel.mana_ge);
 /* GET users listing. */
 router.get('/reports', miscel.rep_orts);
 
-/* Image Gallery */
+/* Image Gallery 
 router.get('/itm/gallery', gallery.gallery_get);
-router.post('/itm/gallery/upload', gallery.gallery_post);
+router.post('/itm/gallery/upload', gallery.gallery_post);*/
 
 
 module.exports = router;

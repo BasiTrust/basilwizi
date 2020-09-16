@@ -37,14 +37,14 @@ basilwizi.use(logger('dev'));
 basilwizi.use(express.json());
 basilwizi.use(express.urlencoded({ extended: false }));
 basilwizi.use(cookieParser());
-//basilwizi.use(express.static(path.join(__dirname, 'public')));
+basilwizi.use(express.static(path.join(__dirname, 'public')));
 
 basilwizi.use(require('connect-flash')());
-/*
+
 basilwizi.use(require('express-formidable')({
   uploadDir: path.join(__dirname, 'public/images/profiles'),
   keepExtensions: true
-}));*/
+}));
 
 basilwizi.use(function (req, res, next) {
   res.locals.user = req.session.user;
@@ -59,7 +59,7 @@ basilwizi.use('/sites', sitesRouter);
 // catch 404 and forward to error handler
 basilwizi.use(function(req, res, next) {
   res.locals.message = err.message;
-  res.locals.error = req.basilwizi.get('env') === 'production' ? err : {};
+  res.locals.error = req.basilwizi.get('env') === 'development' ? err : {};
   res.status(err.status || 500);
   res.render('error');
 });
