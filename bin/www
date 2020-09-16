@@ -4,28 +4,49 @@
  * Module dependencies.
  */
 
-var app = require('../app');
+var basilwizi = require('../index');
 var debug = require('debug')('bt:server');
 var http = require('http');
+var pkg = require('../package.json');
 
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3000');
-app.set('port', port);
+var port = normalizePort(process.env.NODE_ENV === 'development' ? (process.env.PORT || 80) : 7120);
+basilwizi.set('port', port);
 
 /**
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
+var server = http.createServer(basilwizi);
+
+/**
+ * Socket.IO connection
+ */
+var io = require('socket.io')(server);
+
+io.on('connection', function(socket){
+  socket.on('comment', function(data){
+    var commentData = new Comments(data);
+    commentData.save();
+    socket.broadcast.emit('comment', data);
+  });
+  socket.on('reply', function(data){
+    var replyData = new Replys(data);
+    replyData.save();
+    socket.broadcast.emit('reply', data);
+  });
+});
 
 /**
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port);
+server.listen(port, () => {
+  console.log(`${pkg.name} listening on port ${port}`);
+});
 server.on('error', onError);
 server.on('listening', onListening);
 
