@@ -8,5 +8,6 @@ module.exports = {
   User: require('../models/user.model'),
   Contact: require('../models/contact.model'),
   Blogpost: require('../models/blogpost.model'),
-  News: require('../models/news.model')
+  News: require('../models/news.model'),
+  Subscribe: require('../models/subscribe.model')
 };

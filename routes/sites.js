@@ -6,10 +6,10 @@ const home_controller = require('../controllers/homePage');
 const userController = require('../controllers/user.controller');
 const log_out = require('../logout/logout');
 const miscel = require('../controllers/miscel');
-const subs = require('../controllers/subsController');
 const contactController = require('../controllers/contactus.controller');
 const blogpost = require('../controllers/blogpost.controller');
 const { makearticle } = require('../controllers/news.controller');
+const { saveemail } = require('../controllers/subscribe.controller');
 /*
 var blog_reply = require('../controllers/blogReply');
 const news_con = require('../controllers/newsArticles');
@@ -48,7 +48,7 @@ router.get('/logout', log_out.sign_out);
 /**
  * Subscribers, emails
  */
-router.post('/subscribe/create', subs.subs_post);
+router.post('/subscribe/create', saveemail);
 
 /**
  * Blog Post route
