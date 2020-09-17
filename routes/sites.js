@@ -4,8 +4,6 @@ var router = express.Router();
 // Require the controllers
 const home_controller = require('../controllers/homePage');
 const userController = require('../controllers/user.controller');
-const user_controller = require('../controllers/signup');
-const user_login = require('../middleware/login');
 const log_out = require('../logout/logout');
 const miscel = require('../controllers/miscel');
 const subs = require('../controllers/subsController');
@@ -29,10 +27,14 @@ router.get('/', home_controller.home_get, subs.subs_get);
  * routes for the user
  */
 // Login get route
-router.get('/logging/login', user_login.signin_get);
+router.get('/logging/login', function(req, res){
+  res.render('logging/login', {title: 'Basilwizi trust - Bamulonga'})
+});
 router.post('/authenticate', userController.authenticate);
 // Register user get route 
-router.get('/logging/signup', user_controller.signup_get);
+router.get('/logging/signup', function(req, res){
+  res.render('logging/signup', {title: 'Basilwizi trust - for the People of the great river'})
+});
 router.post('/register', userController.register); 
 router.get('/', userController.getAll);
 router.get('/current', userController.getCurrent);

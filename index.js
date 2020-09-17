@@ -6,7 +6,6 @@ const session = require('express-session');
 var flash = require('connect-flash'); 
 var config = require('config-lite')(__dirname); 
 var data = require('./config/role');
-const { dbUrl } = require('./_few_only/store.json');
 var easySession = require('easy-session');
 
 var indexRouter = require('./routes/index');
