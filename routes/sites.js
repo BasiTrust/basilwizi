@@ -21,7 +21,9 @@ const gallery = require('../gallery/gallery');*/
 /**
  * HOME PAGE REDRECT ROUTE
  */
-router.get('/', home_controller.home_get, subs.subs_get);
+router.get('/', home_controller.home_get, function(req, res){
+  res.render('footer')
+});
 
 /**
  * routes for the user
