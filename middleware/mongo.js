@@ -1,4 +1,4 @@
-var mongoose = require('mongoose');
+/*var mongoose = require('mongoose');
 var db = require('../config/default');
 
 mongoose.connect(db.mongodb, {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true});
@@ -22,7 +22,7 @@ exports.User = mongoose.model('User', {
 
 /*exports.User.index({ id: 1 }, { unique: true }).exec();
   role: { type: 'string', enum: [ roles.roles.Editor = 'Editor', roles.roles.SuperUser = 'SuperUser', roles.roles.Writer = 'Writer', roles.roles.User 'User', roles.roles.Guest = 'Guest' ], default: roles.roles.User = 'User'} 
-*/
+*
 
 
 exports.Blogpost = mongoose.model('Blogpost', {
@@ -39,7 +39,7 @@ exports.Blogreply = mongoose.model('Blogreply', {
 
 /*
 exports.Blogpost.index({ _id: -1}).exec();
-*/
+*
 
 exports.Subscriber = mongoose.model('Subscriber', {
   subscriber_email: { type: 'string' }
@@ -78,4 +78,4 @@ exports.ContactUs = mongoose.model('ContactUs', {
   contact_email: {type: 'string'},
   contact_message: {type: 'string'}
 });
-//exports.ContactUs.index({ _id: -1 }).exec();
+//exports.ContactUs.index({ _id: -1 }).exec();*/

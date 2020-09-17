@@ -43,7 +43,7 @@ block content
                   span.fa.fa-google-plus
         .comments.my-5.px-lg-5
           h4.title-hny.mb-5 Recent Posts
-          each blog in blogposts
+          //-each blog in blogposts
             .comments-grids.mt-4
               .media.mt-sm-5.mt-3.ml-5
                 span.fa.fa-user-circle(aria-hidden="true")
@@ -68,20 +68,20 @@ block content
                     li.font-weight-bold
                       a(href="#") Reply
                   p There is going to be many topics to enjoy from this discussion, I can see that.
-          else
+            else
             p Be the first to post
         .contact-right-hny-info.login.px-lg-5
-          h4.title-hny.mb-5 Leave a comment
-          form#blog-form.contact-hny-form(action="/sites/blogpost/create" method="post", enctype="multipart/form-data")
+          h4.title-hny.mb-5 Write your post
+          form#blog-form.contact-hny-form(action="/sites/blog" method="post", enctype="multipart/form-data")
             .row
               .col-lg-5
                 .form-group
                   label First Name (Zina Lyako)
-                  input.form-control(type="text" name="bloger_name" placeholder="Izina" required="")
+                  input.form-control(type="text" name="blogger_name" placeholder="Izina" required="")
               .col-md-5
                 .form-group
                   label Email
-                  input.form-control(type="email" name="bloger_email" placeholder="someone@example.com" required="")
+                  input.form-control(type="email" name="blogger_email" placeholder="someone@example.com" required="")
             .row
               .col-lg-10
                 .form-group

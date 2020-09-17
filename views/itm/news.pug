@@ -28,7 +28,7 @@ block content
           //-* So all additions whould come here*/
           //-*The article loops should appear here*/
           .pagination.pagination-sm
-          for article, i in articles
+          //-for article, i in articles
             .row
               if (pages)
                 ul.pagination.pagination-lg.text-center
@@ -101,7 +101,7 @@ block content
             .container.p-md-5
               .contact-right-hny-info.login.px-lg-5
                 h4.title-hny.mb-5 Leave a comment
-                form.contact-hny-form(action="/sites/itm/news/comment" method="post" enctype="multipart/form-data")
+                //-form.contact-hny-form(action="/sites/itm/news/comment" method="post" enctype="multipart/form-data")
                     .row
                       .col-sm-6
                         .form-group
@@ -118,7 +118,7 @@ block content
                           textarea.form-control(type="text" name="comment_message" required="")
                     .form-group.mx-auto.mt-3
                       button.btn.more(type="submit") Submit
-          else
+           else
             p Empty Pages
             p= role
         #features.row.features-w3pvt-main
