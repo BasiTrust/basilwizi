@@ -13,7 +13,7 @@ var pkg = require('../package.json');
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.NODE_ENV === 'development' ? (process.env.PORT || 80) : 7120);
+var port = normalizePort(process.env.PORT || 7120);
 basilwizi.set('port', port);
 
 /**
