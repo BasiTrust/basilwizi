@@ -62,12 +62,15 @@ async function update(id, userParam) {
   // validate
   if (!user) throw 'User not found';
   if (user.user_email !== userParam.user_email && await User.findOne({ user_email: userParam.user_email })) {
-      throw 'Username "' + userParam.user_email + '" is already taken';
+    throw 'Username "' + userParam.user_email + '" is already taken';
+  }
+  if (user.u_sername !== userParam.u_sername && await User.findOne({ u_sername: userParam.u_sername })) {
+    throw 'Username "' + userParam.u_sername + '" is already taken';
   }
 
   // hash password if it was entered
   if (userParam.user_passwd) {
-      userParam.user_passwd = bcrypt.hashSync(userParam.user_passwd, 10);
+    userParam.user_passwd = bcrypt.hashSync(userParam.user_passwd, 10);
   }
 
   // copy userParam properties to user

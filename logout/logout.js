@@ -3,8 +3,7 @@ exports.sign_out = [
     req.session.logout()
       .then(() => {
         req.session.user = null;
-        req.flash('success', 'Call again!');
-        res.redirect('/sites/');
+        res.redirect('/');
         req.session.destroy();
         return
       })

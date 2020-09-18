@@ -5,7 +5,6 @@ module.exports = {
   getAll,
   getCurrent,
   getById,
-  update,
   delete: _delete
 };
 
@@ -30,12 +29,6 @@ function getCurrent(req, res, next) {
 function getById(req, res, next) {
   contactService.getById(req.params.id)
     .then(contact => contact ? res.json(contact) : res.sendStatus(404))
-    .catch(err => next(err));
-}
-
-function update(req, res, next) {
-  contactService.update(req.params.id, req.fields)
-    .then(() => res.redirect('back'))
     .catch(err => next(err));
 }
 

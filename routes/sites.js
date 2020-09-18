@@ -21,9 +21,7 @@ const gallery = require('../gallery/gallery');*/
 /**
  * HOME PAGE REDRECT ROUTE
  */
-router.get('/', home_controller.home_get, function(req, res){
-  res.render('footer')
-});
+router.get('/', home_controller.home_get);
 
 /**
  * routes for the user
@@ -33,6 +31,21 @@ router.get('/login', function(req, res){
   res.render('logging/login', {title: 'Basilwizi trust - Bamulonga'})
 });
 router.post('/authenticate', userController.authenticate);
+
+/**
+ * Logout from live session
+ */
+router.get('/logout', (req, res, next) => {
+  req.session.logout()
+    .then(() => {
+      req.session.user = null;
+      req.session.destroy();
+      res.redirect('/');
+      return
+    })
+    .catch(next);
+} );
+
 // Register user get route 
 router.get('/signup', function(req, res){
   res.render('logging/signup', {title: 'Basilwizi trust - for the People of the great river'})
@@ -44,8 +57,6 @@ router.get('/:id', userController.getById);
 router.put('/:id', userController.update);
 router.delete('/:id', userController.delete);
 
-// User logout get route
-router.get('/logout', log_out.sign_out);
 
 /**
  * Subscribers, emails
