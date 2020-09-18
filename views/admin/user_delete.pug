@@ -1,0 +1,21 @@
+extends ../layout
+block content
+  #home.inner-w3pvt-page
+    .overlay-innerpage
+      .top_w3pvt_main.container
+    .row.top_w3pvt_main.container
+      ol.breadcrumb.d-flex
+        li.breadcrumb-item
+          a(href="/superuser/admin/listpages") Home
+        li.breadcrumb-item.active SuperAdmin landng pages
+  section.about-info.py-5.px-lg-5
+    .content-w3ls-inn.px-lg-5
+      .container.py-md-5.py-3
+        .px-lg-5
+          h3.tittle-w3ls.mb-lg-5.mb-4 You are about to delete this user
+          p= details.user_fname
+          p= details.user_lname
+          p= details.user_email
+
+          p
+            a.btn.btn-primary(href="/superuser/admin/delete") Confim Delete

@@ -29,12 +29,12 @@ router.get('/', home_controller.home_get, function(req, res){
  * routes for the user
  */
 // Login get route
-router.get('/logging/login', function(req, res){
+router.get('/login', function(req, res){
   res.render('logging/login', {title: 'Basilwizi trust - Bamulonga'})
 });
 router.post('/authenticate', userController.authenticate);
 // Register user get route 
-router.get('/logging/signup', function(req, res){
+router.get('/signup', function(req, res){
   res.render('logging/signup', {title: 'Basilwizi trust - for the People of the great river'})
 });
 router.post('/register', userController.register); 

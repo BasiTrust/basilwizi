@@ -1,0 +1,81 @@
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    title= title
+    meta( name="viewport" content="width=device-width, initial-scale=1")
+    //link.fa.fa-user(rel="icon")
+    link(rel="stylesheet", href="/admin/css/page.css" type="text/css")
+    link(href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css')
+    link(rel="stylesheet", href="/bootstrap/dist/css/bootstrap.min.css")
+    link(rel="stylesheet" href="/admin/fonts/font-awesome-4.7.0/css/font-awesome.min.css")
+    link(rel="stylesheet", href="/admin/css/jquery.bdt.css" type="text/css")
+  body.bg-secondary
+    .container
+        section.wrapper-demo
+          #dd.wrapper-dropdown-2(tabindex=1) ADMIN SETTINGS
+            span
+              |
+              h5
+                i.fa.fa-gear
+            ul.dropdown
+              li
+                a(href="/superuser/accounts") Edit Users
+                  span.fa.fa-users
+              li
+                a(href="/superuser/admin/likes_count") Web Staticstics
+                  span.fa.fa-percent
+              li
+                a(href="#") Upload Settings
+                  span.fa.fa-upload
+              li
+                a(href="#") Edit Slider
+                  span.fa.fa-edit
+              //-if admin.role == 'editor' || admin.role == 'writer' || admin.role == 'manager'
+              li
+                a(href="#") Web Staticstics
+                  span.fa.fa-percent
+              li
+                a(href="/superuser/current") Edit personal account
+                  span.fa.fa-user
+              li
+                a(href="/superuser/logout") Sign Out
+                  span.fa.fa-sign-out
+    section
+      .container
+        block content
+    footer.py-lg-5.py-4.bg-dark.text-white(style="text-align: center; background-color: ghostwhite")
+      .container.py-sm-3
+        .row.d-flex
+          .col-lg-9
+            p.text-lg-center= `© ` + new Date().getFullYear() + ` A MudFam Production`
+          .col-lg-3.move-top.text-lg-right.text-center
+            a.move-top(href="#")
+              span.fa.fa-angle-double-up.mt-3(aria-hidden="true")
+    script(src="/javascripts/jquery.min.js")
+    script(src="/admin/js/vendor/jquery.sortelements.js")
+    script(src="/admin/js/jquery.bdt.min.js")
+    script(src="/admin/js/jquery.js")
+    script.
+      $(document).ready(function(){
+        function DropDown(el) {
+          this.dd = el;
+          this.initEvents();
+        }
+        DropDown.prototype = {
+          initEvents : function() {
+            var obj = this;
+            obj.dd.on('click', function(event){
+              $(this).toggleClass('active');
+              event.stopPropagation();
+            });	
+          }
+        }
+        $(function() {
+          var dd = new DropDown( $('#dd') );
+          $(document).click(function() {
+            // all dropdowns
+            $('.wrapper-dropdown-2').removeClass('active');
+          });
+        });
+      });

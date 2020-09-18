@@ -10,6 +10,7 @@ var easySession = require('easy-session');
 
 var indexRouter = require('./routes/index');
 var sitesRouter = require('./routes/sites');
+var adminRouter = require('./routes/superuser');
 
 var basilwizi = express();
 
@@ -54,6 +55,7 @@ basilwizi.use(function (req, res, next) {
 
 basilwizi.use('/', indexRouter);
 basilwizi.use('/sites', sitesRouter); 
+basilwizi.use('/superuser', adminRouter);
 
 // catch 404 and forward to error handler
 basilwizi.use(function(req, res, next) {

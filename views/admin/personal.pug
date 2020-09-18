@@ -1,0 +1,60 @@
+doctype html
+html(lang = "en")
+  head
+    meta(charset="UTF-8")
+    title Admin User page Login
+    meta( name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="icon" type="image/png" href="/admin/images/icons/favicon.ico")
+    link(rel="stylesheet" type="text/css" href="/admin/vendor/bootstrap/css/bootstrap.min.css")
+    link(rel="stylesheet" type="text/css" href="/admin/fonts/font-awesome-4.7.0/css/font-awesome.min.css")
+    link(rel="stylesheet" type="text/css" href="/admin/fonts/iconic/css/material-design-iconic-font.min.css")
+    link(rel="stylesheet" type="text/css" href="/admin/vendor/animate/animate.css")
+    link(rel="stylesheet" type="text/css" href="/admin/vendor/css-hamburgers/hamburgers.min.css")
+    link(rel="stylesheet" type="text/css" href="/admin/vendor/animsition/css/animsition.min.css")
+    link(rel="stylesheet" type="text/css" href="/admin/vendor/select2/select2.min.css")
+    link(rel="stylesheet" type="text/css" href="/admin/vendor/daterangepicker/daterangepicker.css")
+    link(rel="stylesheet" type="text/css" href="/admin/css/util.css")
+    link(rel="stylesheet" type="text/css" href="/admin/css/main.css")
+  body
+    .limiter
+      .container-login100()
+        .wrap-login100
+          form.login100-form.validate-form(action="/superuser/:id", method="put", enctype="multipart/form-data")
+            span.login100-form-logo
+              i.zmdi.zmdi-landscape
+            span.login100-form-title.p-b-34.p-t-27 Update your account
+            .wrap-input100.validate-input(data-validate = "Enter username")
+              input.input100(type="text" name="username" placeholder="Username" value=(undefined===user ? '' : user.username))
+              span.focus-input100
+                span(data-placeholder)
+                  span.fa.fa-user
+            .wrap-input100.validate-input(data-validate="Enter password")
+              input.input100(type="password" name="password" placeholder="Password")
+              span.focus-input100(data-placeholder)
+                span.fa.fa-key
+            .wrap-input100.validate-input(data-validate="Confirm password")
+              input.input100(type="password" name="repassword" placeholder="Confirm password")
+              span.focus-input100(data-placeholder)
+                span.fa.fa-key
+            .wrap-input100.validate-input(data-validate="Select role")
+              select.input100(name="role" placeholder="Select role")
+                option(value=user.role disabled=user.role selected=user.role)
+                option(value="manager") manager
+                option(value="editor") editor
+                option(value="writer") writer
+                option(value="user") user
+              span.focus-input100(data-placeholder)
+                span.fa.fa-key
+            .container-login100-form-btn
+              button.login100-form-btn Update
+    .dropDownSelect1
+    script(src="/admin/vendor/jquery/jquery-3.2.1.min.js")
+    script(src="/admin/vendor/animsition/js/animsition.min.js")
+    script(src="/admin/vendor/bootstrap/js/popper.js")
+    script(src="/admin/vendor/bootstrap/js/bootstrap.min.js")
+    script(src="/admin/vendor/select2/select2.min.js")
+    script(src="/admin/vendor/daterangepicker/moment.min.js")
+    script(src="/admin/vendor/daterangepicker/daterangepicker.js")
+    script(src="/admin/vendor/countdowntime/countdowntime.js")
+    script(src="/admin/js/main.js")
+

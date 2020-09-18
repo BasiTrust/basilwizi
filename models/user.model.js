@@ -9,11 +9,10 @@ const schema = new Schema({
   user_email: { type: 'string' },
   user_phonenumber: { type: 'string' },
   u_sername: { type: 'string' },
-  user_passwd: { type: 'string' },
+  hash: { type: 'string' },
   user_avatar: { type: 'string' },
   user_bio: { type: 'string' },
-  date_joined: { type: 'string' },
-  role: { type: String, enum: [ 'SuperUser', 'Editor', 'Writer', 'User' ], default: 'User' }
+  role: { type: String }
 }, {
   timestamps: true
 });
@@ -23,7 +22,7 @@ schema.set('toJSON', {
   versionKey: false,
   transform: function (doc, ret) {
     delete ret._id;
-    delete ret.user_passwd;
+    delete ret.hash;
   }
 });
 

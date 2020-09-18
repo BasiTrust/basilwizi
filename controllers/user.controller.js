@@ -12,19 +12,30 @@ module.exports = {
 
 function authenticate(req, res, next) {
   userService.authenticate(req.fields)
-    .then(user => user ? res.json(user) : res.status(400).json({ message: 'Username or password is incorrect' }))
+    .then(user => user 
+      ? req.session.login(req.params.role)
+        .then(()=>{
+          req.session.user = user;
+          req.session.setRole(user.role);
+          res.redirect('/');
+        })
+        .catch(e=>{next(e);})
+      : res.status(400).json({ message: 'Username or password is incorrect' }))
     .catch(err => next(err));
 }
 
 function register(req, res, next) {
   userService.create(req.fields)
-    .then(() => res.redirect('back'))
+    .then(() => res.redirect('/sites/login'))
     .catch(err => next(err));
 }
 
 function getAll(req, res, next) {
   userService.getAll()
-    .then(users => res.json(users))
+    .then(users => res.render('admin/userslist', {
+      title: 'Basilwizi Trust',
+      userslist: users
+    }))
     .catch(err => next(err));
 }
 

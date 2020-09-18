@@ -9,5 +9,6 @@ module.exports = {
   Contact: require('../models/contact.model'),
   Blogpost: require('../models/blogpost.model'),
   News: require('../models/news.model'),
-  Subscribe: require('../models/subscribe.model')
+  Subscribe: require('../models/subscribe.model'),
+  Admin: require('../admin/model/su.model')
 };
