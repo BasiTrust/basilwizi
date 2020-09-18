@@ -10,6 +10,7 @@ const contactController = require('../controllers/contactus.controller');
 const blogpost = require('../controllers/blogpost.controller');
 const { makearticle } = require('../controllers/news.controller');
 const { saveemail } = require('../controllers/subscribe.controller');
+const { getAll } = require('../controllers/blogpost.controller');
 /*
 var blog_reply = require('../controllers/blogReply');
 const news_con = require('../controllers/newsArticles');
@@ -32,19 +33,6 @@ router.get('/login', function(req, res){
 });
 router.post('/authenticate', userController.authenticate);
 
-/**
- * Logout from live session
- */
-router.get('/logout', (req, res, next) => {
-  req.session.logout()
-    .then(() => {
-      req.session.user = null;
-      req.session.destroy();
-      res.redirect('/');
-      return
-    })
-    .catch(next);
-} );
 
 // Register user get route 
 router.get('/signup', function(req, res){
@@ -66,9 +54,7 @@ router.post('/subscribe/create', saveemail);
 /**
  * Blog Post route
  */
-router.get('/itm/blogpost', function(req, res, next){
-  res.render('itm/blogpost', {title: 'Basilwizi trust - Bamulonga'})
-});
+router.get('/blogpost', getAll);
 router.post('/blog', blogpost.makepost);
 router.get('/itm/news', function(req, res, next){
   res.render('itm/news', {title: 'Basilwizi trust - Bamulonga'})
@@ -110,5 +96,19 @@ router.post('/itm/gallery/upload', gallery.gallery_post);
 /** Music Player *
 router.get('/itm/songs', track_get);
 router.post('/itm/songs/upload', track_post);*/
+
+/**
+ * Logout from live session
+ */
+router.get('/logout', (req, res, next) => {
+  req.session.logout()
+    .then(() => {
+      req.session.user = null;
+      req.session.destroy();
+      res.redirect('/');
+      return
+    })
+    .catch(next);
+} );
 
 module.exports = router;

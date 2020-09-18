@@ -17,7 +17,12 @@ function makepost(req, res, next) {
 
 function getAll(req, res, next) {
   blogpostService.getAll()
-    .then(blogposts => res.json(blogposts))
+    .then(blogposts => {
+      res.render('itm/blogpost', {
+        title: 'Basilwizi trust - Bamulonga',
+        blogposts: blogposts
+      })
+    })
     .catch(err => next(err));
 }
 
