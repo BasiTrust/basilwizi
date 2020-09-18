@@ -8,11 +8,19 @@ html(lang='en')
     meta(name='author', content='')
     link(rel='icon', href='../../../../favicon.ico')
     title= title
-    link(rel='stylesheet', href='/bootstrap/dist/css/bootstrap.min.css')
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous")
     link(rel='stylesheet', href='/stylesheets/style.css', type='text/css', media='all')
     link(rel="stylesheet", href="/stylesheets/font-awesome.min.css")
     link(rel="stylesheet", href="/stylesheets/font-awesome.css")
-    script(src="/node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js")
+    script.
+      // Event listener
+      addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+      }, false);
+      
+      function hideURLbar() {
+        window.scrollTo(0, 1);
+      }
   body
     #home
       .top_w3pvt_main.container
@@ -55,13 +63,4 @@ html(lang='en')
         include ./layouts/notification
     block content
     include footer
-    script.
-      // Event listener
-      addEventListener("load", function () {
-        setTimeout(hideURLbar, 0);
-      }, false);
-      
-      function hideURLbar() {
-        window.scrollTo(0, 1);
-      }
 
