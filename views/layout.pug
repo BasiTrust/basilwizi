@@ -10,8 +10,7 @@ html(lang='en')
     title= title
     link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous")
     link(rel='stylesheet', href='/stylesheets/style.css', type='text/css', media='all')
-    link(rel="stylesheet", href="/stylesheets/font-awesome.min.css")
-    link(rel="stylesheet", href="/stylesheets/font-awesome.css")
+    script(src="https://use.fontawesome.com/fde7862b8f.js")
     script.
       // Event listener
       addEventListener("load", function () {
@@ -50,11 +49,11 @@ html(lang='en')
                 a.text-capitalize.mr-2.work.btn(href="/sites/logout") Logout
               li.social-icons.ml-lg-3
                 a.p-0.social-icon(href='#')
-                  span.fa.fa-facebook-official(aria-hidden="true")
+                  i.fab.fa-facebook-f
                   .tooltip Facebook
               li.social-icons.ml-lg-3
                 a.p-0.social-icon(href='#')
-                  span.fa.fa-twitter(aria-hidden="true")
+                  i.fab.fa-twitter
                   .tooltip Twitter
               //-li.social-icons.ml-lg-3
                 a.p-0.social-icon(href='#')
