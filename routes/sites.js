@@ -4,7 +4,6 @@ var router = express.Router();
 // Require the controllers
 const home_controller = require('../controllers/homePage');
 const userController = require('../controllers/user.controller');
-const log_out = require('../logout/logout');
 const miscel = require('../controllers/miscel');
 const contactController = require('../controllers/contactus.controller');
 const blogpost = require('../controllers/blogpost.controller');
