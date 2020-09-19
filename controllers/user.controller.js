@@ -46,13 +46,13 @@ function getCurrent(req, res, next) {
 }
 
 function getById(req, res, next) {
-  userService.getById(req.params._id)
+  userService.getById(req.params.id)
     .then(user => user ? res.json(user) : res.sendStatus(404))
     .catch(err => next(err));
 }
 
 function update(req, res, next) {
-  userService.update(req.params._id, req.fields)
+  userService.update(req.params.id, req.fields)
     .then(() => res.json({}))
     .catch(err => next(err));
 }

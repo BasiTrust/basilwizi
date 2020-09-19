@@ -41,7 +41,7 @@ router.delete('/:id', userController.delete);
 /**
  * Subscribers, emails
  */
-router.post('/subscribe/create', saveemail);
+router.post('/store', saveemail);
 
 /**
  * Blog Post route
@@ -79,8 +79,8 @@ router.get('/logout', (req, res, next) => {
   req.session.logout()
     .then(() => {
       req.session.user = null;
-      res.redirect('/');
       req.session.destroy();
+      res.redirect('/');
       return
     })
     .catch(next);

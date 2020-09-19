@@ -17,6 +17,10 @@ async function getById(id) {
 }
 
 async function create(emailParam) {
+  // validate
+  if (await Subscribe.findOne({ email: emailParam.email }) ) {
+    throw 'This email "' + emailParam + '" is already subscribed';
+  }
 
   const email = new Subscribe(emailParam);
 

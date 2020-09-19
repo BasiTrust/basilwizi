@@ -1,24 +1,15 @@
 //-sites to our newsletter
 if !user
-  section.news-letter-w3pvt.py-5
-    .container.contact-form.mx-auto.text-left
-      h3.title-w3ls.two.text-left.mb-3 Newsletter
-      form.w3ls-frm(method="post" action="/sites/subscribe/create", enctype="multipart/form-data")
-        .row.sites-sec
-          p.news-para.col-lg-3 Care be with us
-          .col-lg-6.con-gd
-            input.form-control(type="email" placeholder="Your email here.." name="subscriber_email" required)
-          .col-lg-3.con-gd
-            button.btn.submit(type="submit") Subscribe
+  include subscribe
 footer.py-lg-5.py-4
   .container.py-sm-3
     .row.footer-grids
       .col-lg-4.mt-4
         h2
           a.navbar-brand.px-0.mx-0.mb-4(href="/sites/") Basilwizi Trust
-        p.mb-3 This organisation is determined to build up people of the great valley. We are gonna work together to achhieve this.
-        h5 Trusted by 
-          span 500+ Subscribers  
+        p.mb-3 ... for sustainable, people driven, socio-economic development in the Zambezi Valley
+        h5 Reaching out to 
+          span 500 000+ Lives 
         .icon-social.mt-4
           a.button-footr(href="#")
             span.fa.mx-2.fa-facebook
@@ -49,14 +40,18 @@ footer.py-lg-5.py-4
               | BANK SWIFT: #[strong [SCBLZWHXA]]
       .col-lg-4.mt-4.ad-info
         h4.mb-4 Contact Info
-        p
-          span.fa.fa-map-marker   Number 11 Pembury Rd, Paddonhurst, Bulawayo, Zimbabwe
-        p.phone
-          span.fa.fa-phone   (12) 123 456 789
-        p
-          span.fa.fa-mobile-phone  077 711 1222
-        p
-          span.fa.fa-envelope   basilwizi@basilwizi.org
+        p.border-bottom
+          span.fa.fa-map-marker  14 Edward Rd, Khumalo, P.O. Box 3720, Bulawayo, Zimbabwe
+          br
+          span.fa.fa-phone  +263 29 2 230 351 or 352
+          br
+          span.fa.fa-envelope  info@basilwizi.co.zw 
+        p.border-bottom
+          span.fa.fa-map-marker  Stand 291, Binga, Zimbabwe
+          br
+          span.fa.fa-phone  +263 15 356 or 366
+          br
+          span.fa.fa-envelope  bast-binga@basilwizi.org
 //- Copyright Section
 section.copy_right.p-3.d-flex
   .container

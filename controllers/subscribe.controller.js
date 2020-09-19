@@ -3,7 +3,6 @@ const subscribeService = require('../service/subscribe.service');
 module.exports = {
   saveemail,
   getAll,
-  getCurrent,
   getById,
   delete: _delete
 };
@@ -17,12 +16,6 @@ function saveemail(req, res, next) {
 function getAll(req, res, next) {
   subscribeService.getAll()
     .then(subscribes => res.json(subscribes))
-    .catch(err => next(err));
-}
-
-function getCurrent(req, res, next) {
-  subscribeService.getById(req.subscribe.sub)
-    .then(subscribe => subscribe ? res.json(subscribe) : res.sendStatus(404))
     .catch(err => next(err));
 }
 
