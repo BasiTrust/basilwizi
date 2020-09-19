@@ -10,13 +10,6 @@ const blogpost = require('../controllers/blogpost.controller');
 const { makearticle } = require('../controllers/news.controller');
 const { saveemail } = require('../controllers/subscribe.controller');
 const { getAll } = require('../controllers/blogpost.controller');
-/*
-var blog_reply = require('../controllers/blogReply');
-const news_con = require('../controllers/newsArticles');
-const comment_p = require('../controllers/Comments');
-const checkIs = require('../middleware/valid');
-const rep = require('../controllers/ReplyCont');
-const gallery = require('../gallery/gallery');*/
 
 /**
  * HOME PAGE REDRECT ROUTE
@@ -60,15 +53,6 @@ router.get('/itm/news', function(req, res, next){
 });
 router.post('/makearticle', makearticle);
 
-/*
-router.post('/itm/blogpost/reply', blog_reply.blog_reply_post);
-
-router.get('/itm/news/:page', news_con.newsarticle_get);
-router.get('/itm/news_form', news_con.news_create);
-router.post('/news', news_con.news_post);
-
-router.post('/itm/news/comment', comment_p.comment_post);
-router.post('/itm/news/reply', rep.reply_post);
 
 /* GET users listing. */
 router.get('/extensions/community', miscel.com_page);
@@ -88,14 +72,6 @@ router.get('/itm/contactus', function(req, res, next) {
 
 router.post('/message', contactController.message );
 
-/* Image Gallery *
-router.get('/itm/gallery', gallery.gallery_get);
-router.post('/itm/gallery/upload', gallery.gallery_post);
-
-/** Music Player *
-router.get('/itm/songs', track_get);
-router.post('/itm/songs/upload', track_post);*/
-
 /**
  * Logout from live session
  */
@@ -103,8 +79,8 @@ router.get('/logout', (req, res, next) => {
   req.session.logout()
     .then(() => {
       req.session.user = null;
-      req.session.destroy();
       res.redirect('/');
+      req.session.destroy();
       return
     })
     .catch(next);
