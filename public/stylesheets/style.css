@@ -867,7 +867,31 @@ h3.tittle-w3ls.two {
     line-height: 40px;
 }
 
-/*--//services--*/
+.sponsors {
+    background: url(../svg/Hollowed-Boxes.svg) no-repeat top;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+}
+
+.sponsors-grid-inf h4,
+.sponsors-grid-inf span,
+.sponsors-grid-inf .link-hny,
+.sponsors-innfo p.sub-tittle {
+    color: #fff;
+}
+
+.sponsors-grid-inf p {
+    color: #d5d7d8;
+}
+
+.sponsors-grid-inf span {
+    line-height: 40px;
+}
+
+/*--//sponsors--*/
 
 /*--/team --*/
 .team-info h3 {
