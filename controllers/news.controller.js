@@ -9,15 +9,28 @@ module.exports = {
   delete: _delete
 };
 
+/**
+ * Making and saving news article to the database
+ */
 function makearticle(req, res, next) {
   newsService.create(req.fields)
     .then(() => res.redirect('back'))
     .catch(err => next(err));
 }
 
+/**
+ * Getting all news articles for reader 
+ */
 function getAll(req, res, next) {
   newsService.getAll()
-    .then(newss => res.json(newss))
+    .then(news => {
+      setTimeout(() => {
+        res.render('itm/news', {
+          title: 'Basilwzi Trust - people of the great river',
+          news: news
+        })
+      },300)
+    })
     .catch(err => next(err));
 }
 

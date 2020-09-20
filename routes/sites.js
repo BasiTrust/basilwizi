@@ -7,9 +7,8 @@ const userController = require('../controllers/user.controller');
 const miscel = require('../controllers/miscel');
 const contactController = require('../controllers/contactus.controller');
 const blogpost = require('../controllers/blogpost.controller');
-const { makearticle } = require('../controllers/news.controller');
+const newsController = require('../controllers/news.controller');
 const { saveemail } = require('../controllers/subscribe.controller');
-const { getAll } = require('../controllers/blogpost.controller');
 
 /**
  * HOME PAGE REDRECT ROUTE
@@ -17,7 +16,7 @@ const { getAll } = require('../controllers/blogpost.controller');
 router.get('/', home_controller.home_get);
 
 /**
- * routes for the user
+ * Login, Register, Edit and Delete Account
  */
 // Login get route
 router.get('/login', function(req, res){
@@ -25,18 +24,11 @@ router.get('/login', function(req, res){
 });
 router.post('/authenticate', userController.authenticate);
 
-
 // Register user get route 
 router.get('/signup', function(req, res){
   res.render('logging/signup', {title: 'Basilwizi trust - for the People of the great river'})
 });
 router.post('/register', userController.register); 
-router.get('/', userController.getAll);
-router.get('/current', userController.getCurrent);
-router.get('/:id', userController.getById);
-router.put('/:id', userController.update);
-router.delete('/:id', userController.delete);
-
 
 /**
  * Subscribers, emails
@@ -46,14 +38,21 @@ router.post('/store', saveemail);
 /**
  * Blog Post route
  */
-router.get('/blogpost', getAll);
+router.get('/blogpost', blogpost.getAll);
 router.post('/blog', blogpost.makepost);
-router.get('/itm/news', function(req, res, next){
-  res.render('itm/news', {title: 'Basilwizi trust - Bamulonga'})
+
+/**
+ * News Articles
+ */
+router.get('/itm/news', newsController.getAll);
+router.get('/itm/writing_pad', (req, res, next) => {
+  res.render('itm/news_form', {title: 'Basilwizi trust - Bamulonga'})
 });
 router.post('/makearticle', makearticle);
 
-
+/**
+ * Pages Making the Core of the Application
+ */
 /* GET users listing. */
 router.get('/extensions/community', miscel.com_page);
 /* GET users listing. */

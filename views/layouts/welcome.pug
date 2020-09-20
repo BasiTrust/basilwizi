@@ -122,7 +122,9 @@ section
   #accordion
     .card
       .card-header
-        a.card-link(data-toggle="collapse" href="#collapseOne") Sponsors
+        a.card-link(data-toggle="collapse" href="#collapseOne")
+          h3.tittle-w3ls.mb-3
+            span.pink Our Sponsors
       #collapseOne.collapse.show(data-parent="#accordion")
-        .card-body
+        .card-body.p-0
           include sponsors

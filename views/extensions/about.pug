@@ -30,58 +30,70 @@ block content
         | Objectives 
         br
         br
-        | Governance
-  section.acout.py-5
-    .container.p-md-5
-      .about-hny-info.text-left.px-md-5
-        h3.tittle-w3ls.mb-3
-          span.pink Vision
-        p.sub-tittle.mt-3.mb-4 A sustainable people driven socio-economic development in the Zambezi Valley
-  section.acout.py-5
-    .container.p-md-5
-      .about-hny-info.text-left.px-md-5
-        h3.tittle-w3ls.mb-3
-          span.pink Mission
-        p.sub-tittle.mt-3.mb-4 Basilwizi is committed to building the capacity of the Tonga and Korekore communities – men, women, young and old, able disabled – for them to realise improved and sustainable well-being and free themselves from poverty.
-  section.acout.py-5
-    .container.p-md-5
-      .about-hny-info.text-left.px-md-5
-        h3.tittle-w3ls.mb-3
-          span.pink Motto
-        p.sub-tittle.mt-3.mb-4 The last shall be first
-  section.acout.py-5
-    .container.p-md-5
-      .about-hny-info.text-left.px-md-5
-        h3.tittle-w3ls.mb-3
-          span.pink Core Values and Philosophy
-        p.sub-tittle.mt-3.mb-4 In achieving its vision and fulfilling its mission Basilwizi shall value a high level of Transparency, respect for all stakeholders, accountability, commitment, team work, empathy ; trustworthy and programme sustainability as well as high ethical standards and social responsibility. Basilwizi will hold on the following values;
-          ul
-            li Transparency: All our work in the organisation shall be open for public scrutiny and done in a clear and responsible manner for all stakeholders to analyse and comprehend. Regular updates to all stakeholders in various forms will drive this value.
-            li Respect and equality: All individuals are equal as human beings and by virtue of the inherent dignity of each human person. All human beings are entitled to their human rights without discrimination of any kind, such as race, colour, sex, ethnicity, age, language, religion, political or other opinion, national or social origin, disability, property, birth or other status as explained by the human rights treaty bodies.
-            li Accountability and Trustworthy: States and other duty-bearers are answerable for the observance of human rights. In this regard, they have to comply with the legal norms and standards enshrined in human rights instruments. Where they fail to do so, aggrieved rights-holders are entitled to institute proceedings for appropriate redress of the situation in accordance with the rules and procedures provided by law.
-            li Empathy: We shall always put ourselves in the situation of the people of the Zambezi Valley. By so doing, our efforts will serve our community better.
-            li Sustainable Communities: Keeping the activity going, investing in individuals and groups to keep initiatives going long term, empowering and leaving skills in communities whilst making and maintaining links to the wider society
-            li Team work and Participation: Ensuring that everyone has the right to fully participate in the decision-making processes that affect their lives, increasing access to do so by removing barriers and creating opportunities to influence/take part.
-            li Diligence and commitment: Business-like attitude and commitment to achieving set goals at least cost.
-  section.acout.py-5
-    .container.p-md-5
-      .about-hny-info.text-left.px-md-5
-        h3.tittle-w3ls.mb-3
-          span.pink Objectives
-        p.sub-tittle.mt-3.mb-4 
-          ul
-            li To empower the affected people to advocate for developmental changes and their inclusion in decision making processes on issues that affect their development particularly the use of resources around / from Lake Kariba;
-            li To assist the beneficiaries to improve their socio-economic well being, through the establishment of people centred development projects that meet the basic material needs;
-            li To facilitate the putting in place of legislation, policies, procedures and practices that enhance the capacity of men and women to access, utilise and control their natural resources;
-            li To promote the cultural and educational development of the beneficiaries;
-            li To combat and reduce the impact of HIV/AIDS pandemic through community based intervention strategies;
-            li To promote gender, child protection and disability mainstreaming in all programme activities of the organisation and
-            li To enhance organisational capacity and ensure effective implementation of Basilwizi goals.
-  section.acout.py-5
-    .container.p-md-5
-      .about-hny-info.text-left.px-md-5
-        h3.tittle-w3ls.mb-3
-          span.pink The Mandate
-        p.sub-tittle.mt-3.mb-4 Zambezi Valley in general, remain one of the least developed areas in the country, highly vulnerable and chronically food insecure due to external shocks such as drought and crop failure causing annual food shortages, particularly among the poorest and most vulnerable households. Among the underplaying causes of poverty in the Zambezi valley are lack of pro-poor policies and/ or ineffective implementation of exiting policy. Therefore, Basilwizi’s work is still relevant and has potential of accomplishing its mission in light of the current political dispensation in Zimbabwe.
-  
+        | Governance 
+  #accordion
+    .card
+      .card-header.text-center.bg-primary
+        a.card-link(data-toggle="collapse" href="#collapseOne") 
+          h3.tittle-w3ls.mb-3
+            span.pink Vision
+      #collapseOne.collapse.show(data-parent="#accordion")
+        .card-body.p-md-5.text-center
+          p.sub-tittle.mt-3.mb-4 A sustainable people driven socio-economic development in the Zambezi Valley
+    .card
+      .card-header.text-center.bg-secondary
+        a.card-link(data-toggle="collapse" href="#collapseTwo")
+          h3.tittle-w3ls.mb-3
+            span.pink Mission
+      #collapseTwo.collapse.show(data-parent="#accordion")
+        .card-body.p-md-5.text-center
+          p.sub-tittle.mt-3.mb-4 Basilwizi is committed to building the capacity of the Tonga and Korekore communities – men, women, young and old, able disabled – for them to realise improved and sustainable well-being and free themselves from poverty.
+    .card
+      .card-header.text-center.bg-dark
+        a.card-link(data-toggle="collapse" href="#collapseThree") 
+          h3.tittle-w3ls.mb-3
+            span.pink Motto
+      #collapseThree.collapse.show(data-parent="#accordion")
+        .card-body.p-md-5.text-center
+          p.sub-tittle.mt-3.mb-4 The last shall be first
+    .card
+      .card-header.text-center.bg-info
+        a.card-link(data-toggle="collapse" href="#collapseFour")
+          h3.tittle-w3ls.mb-3
+            span.pink Core Values and Philosophy
+      #collapseFour.collapse.show(data-parent="#accordion")
+        .card-body.p-md-5
+          p.sub-tittle.mt-3.mb-4 In achieving its vision and fulfilling its mission Basilwizi shall value a high level of Transparency, respect for all stakeholders, accountability, commitment, team work, empathy ; trustworthy and programme sustainability as well as high ethical standards and social responsibility. Basilwizi will hold on the following values;
+            ul
+              li Transparency: All our work in the organisation shall be open for public scrutiny and done in a clear and responsible manner for all stakeholders to analyse and comprehend. Regular updates to all stakeholders in various forms will drive this value.
+              li Respect and equality: All individuals are equal as human beings and by virtue of the inherent dignity of each human person. All human beings are entitled to their human rights without discrimination of any kind, such as race, colour, sex, ethnicity, age, language, religion, political or other opinion, national or social origin, disability, property, birth or other status as explained by the human rights treaty bodies.
+              li Accountability and Trustworthy: States and other duty-bearers are answerable for the observance of human rights. In this regard, they have to comply with the legal norms and standards enshrined in human rights instruments. Where they fail to do so, aggrieved rights-holders are entitled to institute proceedings for appropriate redress of the situation in accordance with the rules and procedures provided by law.
+              li Empathy: We shall always put ourselves in the situation of the people of the Zambezi Valley. By so doing, our efforts will serve our community better.
+              li Sustainable Communities: Keeping the activity going, investing in individuals and groups to keep initiatives going long term, empowering and leaving skills in communities whilst making and maintaining links to the wider society
+              li Team work and Participation: Ensuring that everyone has the right to fully participate in the decision-making processes that affect their lives, increasing access to do so by removing barriers and creating opportunities to influence/take part.
+              li Diligence and commitment: Business-like attitude and commitment to achieving set goals at least cost.
+    .card
+      .card-header.text-center.bg-success
+        a.card-link(data-toggle="collapse" href="#collapseFive")
+          h3.tittle-w3ls.mb-3
+            span.pink Objectives
+      #collapseFive.collapse.show(data-parent="#accordion")
+        .card-body.p-md-5
+          p.sub-tittle.mt-3.mb-4 
+            ul
+              li To empower the affected people to advocate for developmental changes and their inclusion in decision making processes on issues that affect their development particularly the use of resources around / from Lake Kariba;
+              li To assist the beneficiaries to improve their socio-economic well being, through the establishment of people centred development projects that meet the basic material needs;
+              li To facilitate the putting in place of legislation, policies, procedures and practices that enhance the capacity of men and women to access, utilise and control their natural resources;
+              li To promote the cultural and educational development of the beneficiaries;
+              li To combat and reduce the impact of HIV/AIDS pandemic through community based intervention strategies;
+              li To promote gender, child protection and disability mainstreaming in all programme activities of the organisation and
+              li To enhance organisational capacity and ensure effective implementation of Basilwizi goals.
+    .card
+      .card-header.text-center.bg-alert
+        a.card-link(data-toggle="collapse" href="#collapseSix")
+          h3.tittle-w3ls.mb-3
+            span.pink The Mandate
+      #collapseSix.collapse.show(data-parent="#accordion")
+        .card-body.p-md-5
+          p.sub-tittle.mt-3.mb-4 Zambezi Valley in general, remain one of the least developed areas in the country, highly vulnerable and chronically food insecure due to external shocks such as drought and crop failure causing annual food shortages, particularly among the poorest and most vulnerable households. Among the underplaying causes of poverty in the Zambezi valley are lack of pro-poor policies and/ or ineffective implementation of exiting policy. Therefore, Basilwizi’s work is still relevant and has potential of accomplishing its mission in light of the current political dispensation in Zimbabwe.
 

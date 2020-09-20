@@ -94,10 +94,3 @@ block content
             .row
               .form-group.mx-auto.mt-3
                 button.btn.more(type="submit") Submit
-  script.
-    $(document).ready(function(){
-      var d1 = moment(blog.date-posted);
-      var d2 = moment(Date.now());
-      var posted = d1.from(d2);
-    })
-    

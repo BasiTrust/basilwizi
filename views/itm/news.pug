@@ -25,9 +25,13 @@ block content
     section.banner_bottom.py-5
       .container.p-md-5 
         .row 
+          each i in news
+            h4= i.news_title
+            h6= ' by : ' + i.author_fname + ' ' + i.author_lname + ' [ ' + i.createdAt + ' ]'
+            pre.text-wrap= i.news_message
           //-* So all additions whould come here*/
           //-*The article loops should appear here*/
-          .pagination.pagination-sm
+            .pagination.pagination-sm
           //-for article, i in articles
             .row
               if (pages)
@@ -133,26 +137,6 @@ block content
                 p Stay tuned as we will walk with you all the way. Local music is found here. Subscribe to our emailing list so that you can receive current news and other updates
           .col-md-4.feature-gird
             .row.features-hny-inner-gd
-              a.btn.more.green(href="/sites/itm/news_form" role="button") Write Article
+              a.btn.more.green(href="/sites/itm/writing_pad" role="button" target="_blank") Write Article
               //a.btn.more.blue(href=i.url+'/update' role="button") Update Article
-              if guest
-                a.btn.more.green(href="/sites/itm/news_form" role="button") Write Article
-    //script.
-      var socket = io();
-      $('#send').click(function(){
-        var comment = $('#comment').val();
-        var postId = $('#postId').val();
-        if(comment != ''){
-          var data = {'comment': comment,'postId': postId};
-          $('.comments').append("<p>"+comment+"</p>");
-          $('#comment').val('');
-        }
-        socket.emit('comment',data);
-      });
-      socket.on('comment',function(data){
-          var postId = "<%= postId %>";
-          if(postId==data.postId){
-              $('.comments').append("<p>"+data.comment+"</p>");
-          }
-          }); 
     
