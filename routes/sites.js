@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 // Require the controllers
-const home_controller = require('../controllers/homePage');
+const home_controller = require('../controllers/home.controller');
 const userController = require('../controllers/user.controller');
 const miscel = require('../controllers/miscel');
 const contactController = require('../controllers/contactus.controller');
@@ -13,7 +13,7 @@ const { saveemail } = require('../controllers/subscribe.controller');
 /**
  * HOME PAGE REDRECT ROUTE
  */
-router.get('/', home_controller.home_get);
+router.get('/', home_controller.getAll);
 
 /**
  * Login, Register, Edit and Delete Account
@@ -40,6 +40,7 @@ router.post('/store', saveemail);
  */
 router.get('/blogpost', blogpost.getAll);
 router.post('/blog', blogpost.makepost);
+router.post('/archive/:id', blogpost.delete);
 
 /**
  * News Articles
@@ -48,7 +49,7 @@ router.get('/itm/news', newsController.getAll);
 router.get('/itm/writing_pad', (req, res, next) => {
   res.render('itm/news_form', {title: 'Basilwizi trust - Bamulonga'})
 });
-router.post('/makearticle', makearticle);
+router.post('/makearticle', newsController.makearticle);
 
 /**
  * Pages Making the Core of the Application

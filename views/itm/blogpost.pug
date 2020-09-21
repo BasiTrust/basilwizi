@@ -9,7 +9,7 @@ block content
         li.breadcrumb-item
           a(href="/") Home
         li.breadcrumb-item.active Blogging zone
-  section.about-info.p-lg-5.p-3
+  section#blogcorner.about-info.p-lg-5.p-3
     .content-w3ls-inn.px-lg-5
       .container.py-md-5.py-3
         .content-sing-w3pvt.px-lg-5 
@@ -17,12 +17,10 @@ block content
           h4.title-hny.my-2 Tonga culture in the spotlight
           p The people need life, they need service. who can afford to come down to them and giive them what they want/ are you willing to work wih anfd for them. come lets begin the work.
           p.mt-2 There is time for hoe, time for service delivery and time fr rebuilfing that which looks like a community of love, respect, and social cohession.
-
           .row.about-w3pvt-top.mt-2
             .col-lg-6.about-info
               h4.title-hny.mb-3 Topics which made headlines
               p We have selected a few issues to talk about. what is your take on these. Lests begin.
-            
             .col-lg-6.about-img
               .row
                 .col
@@ -48,14 +46,18 @@ block content
               .media.mt-sm-5.mt-3.ml-5
                 span.fa.fa-user-circle(aria-hidden="true")
                 .media-body.comments-grid-right
-                  h5= blog.bloger_name
+                  h5= blog.blogger_name
                   ul.my-2
-                    li.font-weight-bold= blog.blog_date
-                      i  | 
-                    li
-                      a.font-weight-bold(href="#blog-form")  Reply
-                  b
-                    p= blog.blog_title
+                    li.font-weight-bold= blog.createdAt
+                      i  |  
+                    if user
+                      li
+                        a.font-weight-bold(href="#blog-form")  Reply
+                      if user.role === 'SuperUser'
+                        li
+                          form(method="post" action=`/sites/archive/${blog.id}` enctype="multipart/form-data")
+                            button.btn.btn-sm.btn-danger(type="submit") Delete
+                    p.font-weight-bold= blog.blog_title
                   p= blog.blog_message
               //-.media.mt-sm-5.mt-3.ml-5
                 a.pr-3(href="#")
@@ -68,29 +70,49 @@ block content
                     li.font-weight-bold
                       a(href="#") Reply
                   p There is going to be many topics to enjoy from this discussion, I can see that.
-            else
+          else
             p Be the first to post
         .contact-right-hny-info.login.px-lg-5
-          h4.title-hny.mb-5 Write your post
-          form#blog-form.contact-hny-form(action="/sites/blog" method="post", enctype="multipart/form-data")
-            .row
-              .col-lg-5
-                .form-group
-                  label First Name (Zina Lyako)
-                  input.form-control(type="text" name="blogger_name" placeholder="Izina" required="")
-              .col-md-5
-                .form-group
-                  label Email
-                  input.form-control(type="email" name="blogger_email" placeholder="someone@example.com" required="")
-            .row
-              .col-lg-10
-                .form-group
-                  label Title of your discussion
-                  input.form-control(type="text" name="blog_title" placeholder="Title" required="")
-            .row
-              .col-md-10
-                .form-group
-                  textarea.form-control(type="text" name="blog_message" required="")
-            .row
-              .form-group.mx-auto.mt-3
-                button.btn.more(type="submit") Submit
+          if user
+            h4.title-hny.mb-5 Write your post
+            form#blog-form.contact-hny-form(action="/sites/blog" method="post", enctype="multipart/form-data")
+              .row
+                .col-lg-5
+                  .form-group
+                    label Posting as !{user.user_fname}
+              input(type="hidden" name="blogger_name" value=`${user.user_fname} ${user.user_lname}`)
+              input(type="hidden" name="blogger_email" value=user.user_email)
+              .row
+                .col-lg-10
+                  .form-group
+                    label Title of your discussion
+                    input.form-control(type="text" name="blog_title" placeholder="Title" required="")
+              .row
+                .col-md-10
+                  .form-group
+                    textarea.form-control(type="text" name="blog_message" required="")
+              .row
+                .form-group.mx-auto.mt-3
+                  button.btn.more(type="submit") Submit
+          if !user
+            .container.py-md-5
+              h5.tittle-w3ls.text-left.mb-5
+                span.pink Login 
+                | to write a blog
+              .row.news-grids.mt-md-5.mt-4.text-center
+                .col-md-4.gal-img
+                  a(href="#login1")
+                    span.fa.fa-sign-in
+                  .gal-info
+                    h5 Login to Basilwizi
+                      span.decription Website
+              #login1.pop-overlay
+                .popup
+                  form(action="/sites/authenticate" method="POST" enctype="multipart/formdata") 
+                    .form-row
+                      input.form-control(type="text" name="u_sername" placeholder="Username")
+                    .form-row
+                      input.form-control(type="password" name="user_passwd" placeholder="Password")
+                    .form-row
+                      button.btn.btn-info(type="submit") Login
+                  a.close(href="#blogcorner") &times;

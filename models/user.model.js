@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const schema = new Schema({
   user_fname: { type: 'string' },
-  user_sname: { type: 'string' }, 
+  user_lname: { type: 'string' }, 
   gender: { type: 'string', enum: ['m', 'f', 'x'] },
   user_address: { type: 'string' },
   user_email: { type: 'string' },

@@ -39,8 +39,6 @@ basilwizi.use(express.urlencoded({ extended: false }));
 basilwizi.use(cookieParser());
 basilwizi.use(express.static(path.join(__dirname, 'public')));
 
-basilwizi.use(require('connect-flash')());
-
 basilwizi.use(require('express-formidable')({
   uploadDir: path.join(__dirname, 'public/images/profiles'),
   keepExtensions: true

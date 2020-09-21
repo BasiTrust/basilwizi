@@ -9,6 +9,9 @@ module.exports = {
   delete: _delete
 };
 
+/**
+ * the main blog uploading code
+ */
 function makepost(req, res, next) {
   blogpostService.create(req.fields)
     .then(() => res.redirect('back'))

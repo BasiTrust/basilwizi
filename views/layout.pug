@@ -28,7 +28,7 @@ html(lang='en')
           nav.wthree-w3ls
             #logo
               h1
-                a.navbar-brand.px-0.mx-0(href="/sites/extensions/about") Basilwizi Trust
+                a.navbar-brand.px-0.mx-0(href="/sites") Basilwizi Trust
             label.toggle(for="drop") Menu
             input#drop(type="checkbox")
             ul.menu.mr-auto
@@ -36,6 +36,16 @@ html(lang='en')
                 a(href="/sites/") Home
               li
                 a(href="/sites/extensions/about") Mission 
+              if user
+                li.mr-lg-3.mr-2.p-0
+                  label(for="drop-2" class="toggle")= user.user_fname
+                    span.fa.fa-angle-down( aria-hidden="true")
+                  a(href="#")= user.user_fname
+                    span.fa.fa-angle-down( aria-hidden="true")
+                  input#drop-2(type="checkbox")
+                  ul.inner-dropdown
+                    li
+                      a(href="/sites/logout") Logout
               li
                 a(href="/sites/extensions/management") Organisation
               li
