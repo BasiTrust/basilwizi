@@ -39,7 +39,50 @@ block content
               li
                 a(href="#")
                   span.fa.fa-google-plus
-        .comments.my-5.px-lg-5
+        //- Section for writing
+        .contact-right-hny-info.login.px-lg-5
+          if user
+            h4.title-hny.mb-5 Write your post
+            form#blog-form.contact-hny-form(action="/sites/blog" method="post", enctype="multipart/form-data")
+              .row
+                .col-lg-5
+                  .form-group
+                    label Posting as !{user.user_fname}
+              input(type="hidden" name="blogger_name" value=`${user.user_fname} ${user.user_lname}`)
+              input(type="hidden" name="blogger_email" value=user.user_email)
+              .row
+                .col-lg-10
+                  .form-group
+                    label Topic
+                    input.form-control(type="text" name="blog_title" placeholder="Title" required="")
+              .row
+                .col-md-10
+                  .form-group
+                    textarea.form-control(type="text" name="blog_message" required="")
+              .row
+                .form-group.mx-auto.mt-3
+                  button.btn.more(type="submit") Submit
+          if !user
+            .container.py-md-5
+              h5.tittle-w3ls.text-left.mb-5
+                span.pink Login 
+                | to write a blog
+              .row.news-grids.mt-md-5.mt-4.text-center
+                .col-md-4.gal-img
+                  a(href="#login1")
+                    img(src="/svg/sign-in-alt-solid.svg", alt="Login")
+              #login1.pop-overlay
+                .popup
+                  form(action="/sites/authenticate" method="POST" enctype="multipart/formdata") 
+                    .form-row
+                      input.form-control(type="text" name="u_sername" placeholder="Username")
+                    .form-row
+                      input.form-control(type="password" name="user_passwd" placeholder="Password")
+                    .form-row
+                      button.btn.btn-info(type="submit") Login
+                  a.close(href="#blogcorner") &times;
+  //- Section for comments
+  section#comments.comments.my-5.px-lg-5
           h4.title-hny.mb-5 Recent Posts
           each blog in blogposts
             .comments-grids.mt-4
@@ -59,60 +102,5 @@ block content
                             button.btn.btn-sm.btn-danger(type="submit") Delete
                     p.font-weight-bold= blog.blog_title
                   p= blog.blog_message
-              //-.media.mt-sm-5.mt-3.ml-5
-                a.pr-3(href="#")
-                  img.img-fluid.media-img(src="/images/t2.jpg" alt="image")
-                .media-body.comments-grid-right
-                  h4 Mwaami Wesu
-                  ul.my-2
-                    li.font-weight-bold 4 April 2020
-                      i |
-                    li.font-weight-bold
-                      a(href="#") Reply
-                  p There is going to be many topics to enjoy from this discussion, I can see that.
           else
             p Be the first to post
-        .contact-right-hny-info.login.px-lg-5
-          if user
-            h4.title-hny.mb-5 Write your post
-            form#blog-form.contact-hny-form(action="/sites/blog" method="post", enctype="multipart/form-data")
-              .row
-                .col-lg-5
-                  .form-group
-                    label Posting as !{user.user_fname}
-              input(type="hidden" name="blogger_name" value=`${user.user_fname} ${user.user_lname}`)
-              input(type="hidden" name="blogger_email" value=user.user_email)
-              .row
-                .col-lg-10
-                  .form-group
-                    label Title of your discussion
-                    input.form-control(type="text" name="blog_title" placeholder="Title" required="")
-              .row
-                .col-md-10
-                  .form-group
-                    textarea.form-control(type="text" name="blog_message" required="")
-              .row
-                .form-group.mx-auto.mt-3
-                  button.btn.more(type="submit") Submit
-          if !user
-            .container.py-md-5
-              h5.tittle-w3ls.text-left.mb-5
-                span.pink Login 
-                | to write a blog
-              .row.news-grids.mt-md-5.mt-4.text-center
-                .col-md-4.gal-img
-                  a(href="#login1")
-                    span.fa.fa-sign-in
-                  .gal-info
-                    h5 Login to Basilwizi
-                      span.decription Website
-              #login1.pop-overlay
-                .popup
-                  form(action="/sites/authenticate" method="POST" enctype="multipart/formdata") 
-                    .form-row
-                      input.form-control(type="text" name="u_sername" placeholder="Username")
-                    .form-row
-                      input.form-control(type="password" name="user_passwd" placeholder="Password")
-                    .form-row
-                      button.btn.btn-info(type="submit") Login
-                  a.close(href="#blogcorner") &times;

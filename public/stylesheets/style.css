@@ -1375,6 +1375,17 @@ h4.title-hny {
     color: #feac00;
 }
 
+/* Comments Section */
+
+.comments {
+    background: url(../svg/Bermuda-Traingle.svg) no-repeat top;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+}
+
 .comments-grid-right h4 {
     font-size: 17px;
     font-weight: 600;

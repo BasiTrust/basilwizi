@@ -37,16 +37,16 @@ block content
                   input.form-control(type="text", name="news_title" required)
             .form-group
               .row
-                .col-md-12
-                  label Article Content - Please edit your work before submitting it for publishing
-                  #editor(name="news_message" rows="8")
+                label Article Content - Please edit your work before submitting it for publishing
+              .row
+                #editor(name="news_message")
             .form-group
               .row
                 .col-md-4 
                   button.btn.btn-alert(type="submit") Create Article
   script(src="https://cdn.ckeditor.com/ckeditor5/22.0.0/inline/ckeditor.js")
   script.
-    ClassicEditor
+    InlineEditor
       .create( document.querySelector( '#editor' ) )
       .then( editor => {
         const data = editor.getData();
