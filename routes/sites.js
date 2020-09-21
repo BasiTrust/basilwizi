@@ -54,13 +54,9 @@ router.post('/makearticle', newsController.makearticle);
 /**
  * Pages Making the Core of the Application
  */
-/* GET users listing. */
-router.get('/extensions/community', miscel.com_page);
-/* GET users listing. */
-router.get('/extensions/about', miscel.ab_t);
-/* GET users listing. */
-router.get('/extensions/management', miscel.mana_ge);
-/* GET users listing. */
+router.get('/community', miscel.com_page);
+router.get('/about', miscel.ab_t);
+router.get('/management', miscel.mana_ge);
 router.get('/reports', miscel.rep_orts);
 
 /**
