@@ -82,25 +82,5 @@ block content
                       button.btn.btn-info(type="submit") Login
                   a.close(href="#blogcorner") &times;
   //- Section for comments
-  section#comments.comments.my-5.px-lg-5
-          h4.title-hny.mb-5 Recent Posts
-          each blog in blogposts
-            .comments-grids.mt-4
-              .media.mt-sm-5.mt-3.ml-5
-                span.fa.fa-user-circle(aria-hidden="true")
-                .media-body.comments-grid-right
-                  h5= blog.blogger_name
-                  ul.my-2
-                    li.font-weight-bold= blog.createdAt
-                      i  |  
-                    if user
-                      li
-                        a.font-weight-bold(href="#blog-form")  Reply
-                      if user.role === 'SuperUser'
-                        li
-                          form(method="post" action=`/sites/archive/${blog.id}` enctype="multipart/form-data")
-                            button.btn.btn-sm.btn-danger(type="submit") Delete
-                    p.font-weight-bold= blog.blog_title
-                  p= blog.blog_message
-          else
-            p Be the first to post
+  section
+    include blog-comment-section
