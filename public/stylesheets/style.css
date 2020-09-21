@@ -564,7 +564,7 @@ li>a:only-child:after {
 
 /* background images for banner */
 .banner-w3pvt-1 {
-    background: url(../images/vm.jpg) no-repeat top;
+    background: url(../svg/Sun-Tornado.svg) no-repeat top;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -574,7 +574,7 @@ li>a:only-child:after {
 }
 
 .banner-w3pvt-2 {
-    background: url(../images/banner2.jpg) no-repeat center;
+    background: url(../svg/Wavey-Fingerprint.svg) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -584,7 +584,7 @@ li>a:only-child:after {
 }
 
 .banner-w3pvt-3 {
-    background: url(../images/banner3.jpg) no-repeat center;
+    background: url(../svg/Confetti-Doodles.svg) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -851,7 +851,7 @@ h3.tittle-w3ls.two {
 .over-lay-blue {
     background: rgba(10, 10, 10, 0.67);
 }
-
+ 
 .services-grid-inf h4,
 .services-grid-inf span,
 .services-grid-inf .link-hny,
