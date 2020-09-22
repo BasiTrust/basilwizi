@@ -35,7 +35,7 @@ html(lang='en')
               li.active
                 a(href="/sites/") Home
               li
-                a(href="/sites/extensions/about") Mission 
+                a(href="/sites/about") Mission 
               if user
                 li.mr-lg-3.mr-2.p-0
                   label(for="drop-2" class="toggle")= user.user_fname
@@ -47,13 +47,13 @@ html(lang='en')
                     li
                       a(href="/sites/logout") Logout
               li
-                a(href="/sites/extensions/management") Organisation
+                a(href="/sites/management") Organisation
               li
-                a(href="/sites/extensions/community") Projects
+                a(href="/sites/community") Projects
               li
-                a(href="/sites/itm/gallery") Gallery
+                a(href="/sites/gallery") Gallery
               li
-                a(href="/sites/itm/contactus") Contact Us
+                a(href="/sites/contactus") Contact Us
               if !user
                 a.text-capitalize.mr-2.work.btn(href='/sites/login', class=(title == 'Get started to our page' ? 'active' : '')) Login
               li.social-icons.ml-lg-3
