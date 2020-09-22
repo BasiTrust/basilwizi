@@ -119,12 +119,8 @@ section#gallery.projects.py-5
           p.mt-4 The Self Help Group project started in 2012 and is operating in the wards of Sinansengwe, Sinampande, Nagangala and Nabusenga in the Zambezi Valley.  
           a.close(href="#gallery") &times;
 section
-  #accordion
-    .card
-      .card-header
-        a.card-link(data-toggle="collapse" href="#collapseOne")
-          h3.tittle-w3ls.mb-3
-            span.pink Our Sponsors
-      #collapseOne.collapse.show(data-parent="#accordion")
-        .card-body.p-0
-          include sponsors
+  a.btn.btn-info(data-toggle="collapse" href="#sponsors-section")
+    h3.tittle-w3ls.mb-3
+      span.pink Our Sponsors
+  #sponsors-section.collapse
+    include sponsors
