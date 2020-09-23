@@ -1,17 +1,5 @@
-section.about.py-5
-  .container.p-md-5
-    .about-hny-info.text-left.px-md-5
-      h3.tittle-w3ls.mb-3
-        span.pink We 
-          | think together
-      p.sub-tittle.mt-3.mb-4 News and Updates on Basilwizi activities please visit this site. A list of ongoing and past projects can be found in here too.
-      .row
-        .col-md-4
-          a.btn.more.black(href="/sites/#articles" role="button") Read more
-        .col-md-4
-          a.btn.more.black(target="_blank" href="/sites/itm/#songs" role="button") Listen
-        .col-md-4
-          a.btn.more.black(href="/sites/itm/news" role="button") News
+section.album.py-5.bg-light
+  include extn-one
 section.banner_bottom.py-5
     .container.py-md-5
       .row.inner_sec_info 
@@ -19,9 +7,9 @@ section.banner_bottom.py-5
           img.img-fluid(src="/images/ab.jpg" alt=" ")
         .col-md-6.banner_bottom_left.mt-lg-0.mt-4
           h4
-            a.link-hny(href="/sites/extensions/community") Making life happen in the river valley
+            a.link-hny(href="/sites/community") Making life happen in the river valley
           p We believe in a healthy living. Therefore we ecourage people to join leisure activities wherever they are. Updates will also come along
-          a.btn.more.black.mt-3(href="/sites/extensions/community") Read more
+          a.btn.more.black.mt-3(href="/sites/community") Read more
       #features.row.features-w3pvt-main
         .col-md-4.feature-gird
           .row.features-hny-inner-gd
@@ -30,7 +18,7 @@ section.banner_bottom.py-5
                 span.fa.fa-globe(aria-hidden="true")
             .col-md-9.featured_grid_right_info.pl-lg-0
               h4
-                a.link-hny(href="/sites/email/create") Network with others
+                a.link-hny(href="/sites/#") Network with others
               p Stay tuned as we will walk with you all the way. Local music is found here. Subscribe to our emailing list so that you can receive current news and other updates 
         .col-md-4.feature-gird
           .row.features-hny-inner-gd
@@ -48,7 +36,7 @@ section.banner_bottom.py-5
                 span.fa.fa-handshake-o(aria-hidden="true")
             .col-md-9.featured_grid_right_info.pl-lg-0
               h4
-                a.link-hny(href="/sites/") Stay tuned
+                a.link-hny(href="/sites/#") Stay tuned
               p As a community initiative we rely heavily on donotions from warm hearted individuals like you. Please make a donation. It counts
 //-services offered by Basliwzi
 section#services.services
@@ -60,7 +48,7 @@ section#services.services
               span.pink Basilwizi 
               | is water people
             p the river water is so good no one dares leave it after testing it. thatd why many drink, but a few will survive the river flow.
-            a(href="/sites/extensions/community")
+            a(href="/sites/community")
               img.img-fluid(src="/images/ab2.jpg" alt=" ")
           .col-lg-7.services-grid-inf
             .row.services-w3pvt-main.mt-5
@@ -119,8 +107,14 @@ section#gallery.projects.py-5
           p.mt-4 The Self Help Group project started in 2012 and is operating in the wards of Sinansengwe, Sinampande, Nagangala and Nabusenga in the Zambezi Valley.  
           a.close(href="#gallery") &times;
 section
-  a.btn.btn-info(data-toggle="collapse" href="#sponsors-section")
-    h3.tittle-w3ls.mb-3
-      span.pink Our Sponsors
-  #sponsors-section.collapse
-    include sponsors
+  #accordion
+    .card
+      .card-header
+        a.card-link(data-toggle="collapse" href="#collapseOne")
+          h3.tittle-w3ls.mb-3
+            span.pink Our Sponsors
+            | 
+            span.fa.fa-angle-double-down
+      #collapseOne.collapse(data-parent="#accordion")
+        .card-body.p-0
+          include sponsors

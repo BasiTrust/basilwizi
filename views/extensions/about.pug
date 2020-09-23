@@ -2,35 +2,15 @@ extends ../layout
 
 block content
   //- About Basilwizi//- Home banner 
-  #homepage-slider.st-slider
-    input.cs_anchor.radio(type="radio" name="slider" id="play1" checked="")
-    input.cs_anchor.radio(type="radio" name="slider" id="slide1" checked="")
-    input.cs_anchor.radio(type="radio" name="slider" id="slide2" checked="")
-    input.cs_anchor.radio(type="radio" name="slider" id="slide3" checked="")
-    .images
-      .images-inner
-        .image-slide
-          .banner-w3pvt-1
-            .overlay-w3ls
-        .image-slide
-          .banner-w3pvt-2
-            .overlay-w3ls
-        .image-slide
-          .banner-w3pvt-3
-            .overlay-w3ls
-    .labels
-      .fake-radio
-        label.radio-btn(for="slide1")
-        label.radio-btn(for="slide2")
-        label.radio-btn(for="slide3")
-    .banner-hny-info
-      h3 Vision 
+  include ../layouts/home-carousel-setting
+  .banner-hny-info
+      h3 Our Vision 
         br 
         br
-        | Objectives 
+        | Our Objectives 
         br
         br
-        | Governance 
+        | Our Governance Strategy
   #accordion
     .card
       .card-header.text-center.bg-primary

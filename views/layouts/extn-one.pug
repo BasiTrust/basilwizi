@@ -1,0 +1,130 @@
+//- Section for What's in the website of the Index Page
+.container
+    h3.tittle-w3ls.mb-3
+      span.pink What is 
+      | in the Website
+    .row
+      .col-md-8
+        #newsSlideCarousel.carousel.slide(data-ride="carousel")
+          ol.carousel-indicators
+            li.active(data-target="newsSlideCarousel" data-slide-to="0")
+            li.active(data-target="newsSlideCarousel" data-slide-to="1")
+            li.active(data-target="newsSlideCarousel" data-slide-to="2")
+            li.active(data-target="newsSlideCarousel" data-slide-to="3")
+            li.active(data-target="newsSlideCarousel" data-slide-to="4")
+          .carousel-inner
+            .carousel-item.active
+              img.card-img-top(src="/images/cw.jpg" width="450" height="225" text="Thumbnail")
+              .container
+                      .carousel-caption.text-left
+                        h2 Binga to be a Town
+                        p.text-white Binga will soon be commissioned as a Town. It's good news for the BaTonga people, Basilwizi, who inhabit most parts of the land there.
+                        p: a.btn.btn-sm.btn-outline-secondary(href="/sites/news" role="button") View
+                        p: small.text-muted 9 mins
+            .carousel-item
+              img.card-img-top(src="/images/cw.jpg" width="100%" height="225" text="Thumbnail")
+              .container
+                      .carousel-caption.text-left
+                        h2 Chibila area needs water
+                        p Tha place has perenial water shortages. There needs a borehole for survival
+                        p: a.btn.btn-sm.btn-outline-secondary(href="/sites/news" role="button") View
+                        p: small.text-muted 9 mins
+            .carousel-item
+              img.card-img-top(src="/images/cw.jpg" width="100%" height="225" text="Thumbnail")
+              .container
+                      .carousel-caption.text-left
+                        h2 Nabusenga Hills falling
+                        p The hills are believed to be falling. Efforts are under way to make them stop falling on people
+                        p: a.btn.btn-sm.btn-outline-secondary(href="/sites/news" role="button") View
+                        p: small.text-muted 9 mins
+            .carousel-item
+              img.card-img-top(src="/images/cw.jpg" width="100%" height="225" text="Thumbnail")
+              .container
+                      .carousel-caption.text-left
+                        h2 Youth project kicks off
+                        p Youth projects aimed at youth in Binga and of Tonga origin are begining to kick off
+                        p: a.btn.btn-sm.btn-outline-secondary(href="/sites/news" role="button") View
+                        p: small.text-muted 9 mins
+            .carousel-item
+              img.card-img-top(src="/images/cw.jpg" width="100%" height="225" text="Thumbnail")
+              .container
+                      .carousel-caption.text-left
+                        h2 Hunger in Hwange RDC
+                        p Drought is affecting HRDC people. Food is needed. Donations of any kind are welcome
+                        p: a.btn.btn-sm.btn-outline-secondary(href="/sites/news" role="button") View
+                        p: small.text-muted 9 mins
+          a.carousel-control-prev(href="#newsSlideCarousel" role="button" data-slide="prev")
+                  span.carousel-control-prev-icon(aria-hidden="true")
+                  span.sr-only Previous
+          a.carousel-control-next(href="#newsSlideCarousel" role="button" data-slide="next")
+                  span.carousel-control-next-icon(aria-hidden="true")
+                  span.sr-only Next
+      .col-md-4
+        .card.mb-4.shaddow-sm
+          img.card-img-top(src="/images/cw.jpg" width="100%" height="225" text="Thumbnail")
+          .card-body
+            p.card-text Projects for self-sustenance
+            .d-flex.justify-content-between.align-items-center
+              #newsSlideCarousel.carousel.slide(data-ride="carousel")
+                ol.carousel-indicators
+                  li.active(data-target="newsSlideCarousel" data-slide-to="0")
+                .carousel-inner
+                  .carousel-item.active
+                a.carousel-control-prev(href="#newsSlideCarousel" role="button" data-slide="prev")
+                  span.carousel-control-prev-icon(aria-hidden="true")
+                  span.sr-only Previous
+                a.carousel-control-next(href="#newsSlideCarousel" role="button" data-slide="next")
+                  span.carousel-control-next-icon(aria-hidden="true")
+                  span.sr-only Next
+              .btn-group
+                a.btn.btn-sm.btn-outline-secondary(href="/sites/#articles" role="button") View
+                button.btn.btn-sm.btn-outline-secondary(type="button") Edit
+                small.text-muted 9 mins
+      .col-md-4
+        .card.mb-4.shaddow-sm
+          img.card-img-top(src="/images/cw.jpg" width="100%" height="225" text="Thumbnail")
+          .card-body
+            p.card-text Programmes for the vulnerable
+            .d-flex.justify-content-between.align-items-center
+              #newsSlideCarousel.carousel.slide(data-ride="carousel")
+                ol.carousel-indicators
+                  li.active(data-target="newsSlideCarousel" data-slide-to="0")
+                .carousel-inner
+                  .carousel-item.active
+                a.carousel-control-prev(href="#newsSlideCarousel" role="button" data-slide="prev")
+                  span.carousel-control-prev-icon(aria-hidden="true")
+                  span.sr-only Previous
+                a.carousel-control-next(href="#newsSlideCarousel" role="button" data-slide="next")
+                  span.carousel-control-next-icon(aria-hidden="true")
+                  span.sr-only Next
+              .btn-group
+                button.btn.btn-sm.btn-outline-secondary(type="button") View
+                button.btn.btn-sm.btn-outline-secondary(type="button") Edit
+                small.text-muted 9 mins
+      .col-md-4
+        .card.mb-4.shaddow-sm
+          .card-body
+            p.card-text
+            .d-flex.justify-content-between.align-items-center
+              .btn-group
+                button.btn.btn-sm.btn-outline-secondary(type="button") View
+                button.btn.btn-sm.btn-outline-secondary(type="button") Edit
+                small.text-muted 9 mins
+      .col-md-4
+        .card.mb-4.shaddow-sm
+          .card-body
+            p.card-text
+            .d-flex.justify-content-between.align-items-center
+              .btn-group
+                button.btn.btn-sm.btn-outline-secondary(type="button") View
+                button.btn.btn-sm.btn-outline-secondary(type="button") Edit
+                small.text-muted 9 mins
+      .col-md-4
+        .card.mb-4.shaddow-sm
+          .card-body
+            p.card-text
+            .d-flex.justify-content-between.align-items-center
+              .btn-group
+                button.btn.btn-sm.btn-outline-secondary(type="button") View
+                button.btn.btn-sm.btn-outline-secondary(type="button") Edit
+                small.text-muted 9 mins

@@ -45,8 +45,8 @@ router.post('/archive/:id', blogpost.delete);
 /**
  * News Articles
  */
-router.get('/itm/news', newsController.getAll);
-router.get('/itm/writing_pad', (req, res, next) => {
+router.get('/news', newsController.getAll);
+router.get('/writing_pad', (req, res, next) => {
   res.render('itm/news_form', {title: 'Basilwizi trust - Bamulonga'})
 });
 router.post('/makearticle', newsController.makearticle);
@@ -62,7 +62,7 @@ router.get('/reports', miscel.rep_orts);
 /**
  * Get contactus page and set response setup
  */
-router.get('/itm/contactus', function(req, res, next) {
+router.get('/contactus', function(req, res, next) {
   res.render('itm/contactus', {title: 'Baslwizi- People of the great river' });
 });
 
