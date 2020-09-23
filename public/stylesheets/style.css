@@ -611,7 +611,7 @@ li>a:only-child:after {
     color: #fff;
 }
 
-.btn {
+.btn-more {
     border: 2px solid #fff;
     padding: 11px 30px;
     color: #fff;
@@ -1306,7 +1306,7 @@ ol.breadcrumb li a {
     content: "/";
 }
 
-/*--/contact-- */
+/*--/contact-- *
 .contact-hny-form input,
 .contact-hny-form textarea {
     padding: 13px 15px;
@@ -1325,7 +1325,7 @@ ol.breadcrumb li a {
     -ms-border-radius: 4px;
     border: 1px solid #ddd;
     width: 100%;
-}
+} */
 
 .contact-hny-form textarea {
     min-height: 257px;
@@ -2127,7 +2127,7 @@ a.move-top span {
         font-size: 2em;
     }
 
-    .btn {
+    .btn-more {
         padding: 7px 23px;
     }
 
