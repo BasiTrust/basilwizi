@@ -1,10 +1,20 @@
-section.news-letter-w3pvt.py-5
-  .container.contact-form.mx-auto.text-left
-    h3.title-w3ls.two.text-left.mb-3 Newsletter
-    form(method="post" action="/sites/store", enctype="multipart/form-data")
-      .row.sites-sec
-        p.news-para.col-lg-3 Care be with us
-        .col-lg-6.con-gd
-          input.form-control(type="email" placeholder="Your email here.." name="email" required)
-        .col-lg-3.con-gd
-          button.btn.btn-primary.btn-sm(type="submit") Subscribe
+section.fdb-block
+  .container
+    .row
+      .col-12.col-md-6.m-md-auto.ml-lg-0.col-lg-5
+        img.img-fluid(src="/svg/group-chat.svg", alt="Subscribe")
+      .col-12.col-md-10.col-lg-6.mt-4.mt-lg-0.ml-auto.mr-auto.ml-lg-auto.text-left
+        .row
+          .col
+            h1 Subscribe
+            p.lead Basilwizi Trust. People of the Great River
+        .row.mt-4
+          .col
+            form(method="post" action="/sites/store", enctype="multipart/form-data")
+              .input-group
+                input.form-control(type="email" placeholder="Your email here.." name="email" required)
+                .input-group-append
+                  button.btn.btn-primary(type="submit") Submit
+        .row
+          .col
+            h4 *Leave your email address to be notified first
