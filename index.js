@@ -7,6 +7,7 @@ var flash = require('connect-flash');
 var config = require('config-lite')(__dirname); 
 var data = require('./config/role');
 var easySession = require('easy-session');
+const cors = require('cors');
 
 var indexRouter = require('./routes/index');
 var sitesRouter = require('./routes/sites');
@@ -38,6 +39,7 @@ basilwizi.use(express.json());
 basilwizi.use(express.urlencoded({ extended: false }));
 basilwizi.use(cookieParser());
 basilwizi.use(express.static(path.join(__dirname, 'public')));
+basilwizi.use(cors());
 
 basilwizi.use(require('express-formidable')({
   uploadDir: path.join(__dirname, 'public/images/profiles'),
